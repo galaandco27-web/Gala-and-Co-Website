@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.galaandco.com/sitemap.xml
