@@ -400,94 +400,77 @@ function initServiceMicroScroll() {
 }
 
 /**
- * Projects Gallery Narrative — Master Correction
- * Vertical scroll → horizontal gallery via LERP
+ * Project Box Image Slider
+ * Handles fading between images with auto-play and manual controls
  */
-function initProjectsGallery() {
-  const section = document.querySelector('.projects-section');
-  const sticky = document.querySelector('.sticky-gallery-container');
-  const wrapper = document.querySelector('.projects-carousel-wrapper');
-  const track = document.querySelector('.projects-track');
-  const cards = document.querySelectorAll('.project-card');
+function initProjectSlider() {
+  const slider = document.getElementById('project-slider-1');
+  if (!slider) return;
 
-  if (!section || !sticky || !track || !cards.length) return;
+  const images = slider.querySelectorAll('.slider-img');
+  const prevBtn = slider.querySelector('.prev-btn');
+  const nextBtn = slider.querySelector('.next-btn');
 
-  let currentX = 0;
-  let targetX = 0;
-  let rafId = null;
+  if (!images.length) return;
 
-  // Preload first two images
-  ['assets/images/project 1 a.jpg', 'assets/images/project 1 b.jpg'].forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
+  let currentIndex = 0;
+  let autoPlayInterval;
+  const SLIDE_DURATION = 4000; // 4 seconds per image
 
-  /* Set section height so there is ZERO dead scroll area:
-     height = (track total scrollable distance) + one viewport height */
-  const setHeight = () => {
-    const trackW = track.scrollWidth;
-    const viewW = window.innerWidth;
-    const viewH = window.innerHeight;
-    const scrollDist = Math.max(0, trackW - viewW);
-    const total = scrollDist + viewH;
-    section.style.height = `${total}px`;
+  const showImage = (index) => {
+    images.forEach(img => img.classList.remove('is-active'));
+    images[index].classList.add('is-active');
   };
 
-  /* Mark the card closest to viewport center as active */
-  const updateActive = () => {
-    const midX = window.innerWidth / 2;
-    let bestDist = Infinity;
-    let bestIdx = 0;
-    cards.forEach((card, i) => {
-      const rect = card.getBoundingClientRect();
-      const d = Math.abs(rect.left + rect.width / 2 - midX);
-      if (d < bestDist) { bestDist = d; bestIdx = i; }
+  const nextSlide = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  };
+
+  const prevSlide = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  };
+
+  const resetAutoPlay = () => {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(nextSlide, SLIDE_DURATION);
+  };
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nextSlide();
+      resetAutoPlay();
     });
-    cards.forEach((c, i) => c.classList.toggle('is-active', i === bestIdx));
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      prevSlide();
+      resetAutoPlay();
+    });
+  }
+
+  // Preload next images
+  const preloadImages = () => {
+    images.forEach(img => {
+      if (!img.complete && img.loading === 'lazy') {
+        img.loading = 'eager'; // Force load others once slider begins
+      }
+    });
   };
 
-  const tick = () => {
-    const sectionTop = section.offsetTop;
-    const sectionH = section.offsetHeight;
-    const scrollY = window.scrollY;
-    const viewH = window.innerHeight;
-    const scrollRange = sectionH - viewH;
+  // Start auto-play
+  autoPlayInterval = setInterval(nextSlide, SLIDE_DURATION);
 
-    // Scroll progress 0→1
-    let progress = (scrollY - sectionTop) / scrollRange;
-    progress = Math.max(0, Math.min(1, progress));
+  // Pause on hover for better UX
+  slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+  slider.addEventListener('mouseleave', () => resetAutoPlay());
 
-    // Max horizontal travel
-    const maxX = Math.max(0, track.scrollWidth - (wrapper ? wrapper.clientWidth : window.innerWidth));
-    targetX = -(progress * maxX);
-
-    // LERP factor 0.08 ≈ 35% slower feel — luxury weighted motion
-    currentX += (targetX - currentX) * 0.08;
-    track.style.transform = `translateX(${currentX}px)`;
-    updateActive();
-
-    if (Math.abs(targetX - currentX) > 0.05) {
-      rafId = requestAnimationFrame(tick);
-    } else {
-      track.style.transform = `translateX(${targetX}px)`;
-      updateActive();
-      rafId = null;
-    }
-  };
-
-  const onScroll = () => { if (!rafId) rafId = requestAnimationFrame(tick); };
-
-  // Set first card active on load
-  if (cards[0]) cards[0].classList.add('is-active');
-
-  // Initial height, recalc on resize and when images finish loading
-  setHeight();
-  const ro = new ResizeObserver(setHeight);
-  ro.observe(track);
-  window.addEventListener('resize', setHeight, { passive: true });
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  tick(); // initial paint
+  // Trigger preload after UI settles
+  setTimeout(preloadImages, 1000);
 }
 
 
@@ -762,7 +745,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initServices();
   initServiceMicroScroll();
-  initProjectsGallery();
+  initProjectSlider();
   initVisitModal();
   initSmoothScroll();
   initCinematicLoad();

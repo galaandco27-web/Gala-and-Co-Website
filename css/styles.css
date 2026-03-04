@@ -1079,25 +1079,35 @@ h6 {
   }
 }
 
-/* Blueprint Vertical Accent Line */
-.service-row::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: var(--space-32);
-  bottom: var(--space-32);
-  width: 1px;
-  background-color: var(--color-primary);
-  opacity: 0;
-  transition: opacity 0.5s var(--ease-luxury), transform 0.5s var(--ease-luxury);
-  transform: scaleY(0);
-  transform-origin: top;
-}
+/* Blueprint Vertical Accent Line — Centered Partition */
+@media (min-width: 1024px) {
+  .services-grid {
+    position: relative;
+    /* Context for absolute line */
+  }
 
-.service-row:hover::before,
-.service-row.active-service::before {
-  opacity: 0.2;
-  transform: scaleY(1);
+  /* The actual line, positioned dead center of the grid */
+  .services-grid::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--color-primary);
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-luxury), transform 0.5s var(--ease-luxury);
+    transform: scaleY(0);
+    transform-origin: center;
+    z-index: 1;
+    /* Above borders but below content */
+  }
+
+  /* Reveal line when hovering OVER the entire grid (either column) */
+  .services-grid:hover::before {
+    opacity: 0.2;
+    transform: scaleY(1);
+  }
 }
 
 @media (hover: hover) {
@@ -1109,11 +1119,6 @@ h6 {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.01);
   }
-}
-
-.service-row.active-service {
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.01);
 }
 
 .service-h3 {
@@ -1173,11 +1178,8 @@ h6 {
   .service-row:hover .service-image-wrap {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
     transform: translateY(-4px);
+    clip-path: inset(0%);
   }
-}
-
-.service-row.active-service .service-image-wrap {
-  clip-path: inset(0%);
 }
 
 .service-image-wrap img {
@@ -1194,37 +1196,21 @@ h6 {
 }
 
 /* ============================================================
-   PROJECTS SECTION — Gallery Corridor
-   Height is dynamically calculated by JS via --gallery-scroll-height
+   PROJECTS SECTION — Static 2-Column Grid
    ============================================================ */
 .projects-section {
   position: relative;
-  height: var(--gallery-scroll-height, 300vh);
-  /* JS sets this precisely */
   background-color: var(--color-bg);
   border-top: 1px solid var(--color-border);
+  padding-block: var(--space-48) var(--space-80);
 }
 
-.sticky-gallery-container {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-}
-
-/* Section header sits above the track, inside sticky container */
 .projects-gallery-header {
   width: 100%;
   max-width: var(--container-max, 1280px);
   margin-inline: auto;
   padding-inline: var(--space-24);
-  padding-top: var(--space-64);
-  padding-bottom: var(--space-32);
-  flex-shrink: 0;
+  padding-bottom: var(--space-48);
   /* Premium reveal animation */
   opacity: 0;
   transform: translateY(30px);
@@ -1250,57 +1236,35 @@ h6 {
   color: var(--color-primary);
 }
 
-/* The carousel scrolling area — overflow hidden clips peeking cards */
-.projects-carousel-wrapper {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding-block: var(--space-32);
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+  width: 100%;
+  max-width: var(--container-max, 1280px);
+  margin-inline: auto;
+  padding-inline: var(--space-24);
 }
 
-/* Horizontal track — moved purely via JS transform.
-   padding-inline = (viewport - card width) / 2  =  always centers first card.
-   Using the exact card size (700px) so formula is always correct. */
-.projects-track {
-  display: flex;
-  gap: 48px;
-  padding-inline: calc((100vw - 700px) / 2);
-  will-change: transform;
-  /* NO CSS transition — JS LERP handles all smoothing */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-48);
+  }
 }
 
-/* Individual card — pixel-anchored, zoom-independent */
-.project-card {
+.project-box {
   position: relative;
-  flex: 0 0 700px;
-  /* fixed px — no vw, no stretching */
-  width: 700px;
-  /* belt-and-suspenders */
+  width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 22px;
+  border-radius: var(--radius);
   background-color: var(--color-secondary);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.04),
-    0 8px 32px rgba(0, 0, 0, 0.08);
-  transform: scale(0.95);
-  opacity: 0.72;
-  transition:
-    transform 0.7s var(--ease-luxury),
-    opacity 0.7s var(--ease-luxury);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Active / centered card — set by JS */
-.project-card.is-active {
-  transform: scale(1);
-  opacity: 1;
-  box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.07),
-    0 16px 48px rgba(0, 0, 0, 0.12);
-}
-
-.project-card img {
+/* Static Image inside Box 2 */
+.project-box-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1308,44 +1272,87 @@ h6 {
   transition: transform 1.4s var(--ease-luxury);
 }
 
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0);
-  pointer-events: none;
-}
-
 @media (hover: hover) {
-  .project-card:hover img {
+  .project-box:hover .project-box-img {
     transform: scale(1.03);
   }
 }
 
-/* Tablet (< 900px): 560px card, still shows peek */
-@media (max-width: 900px) {
-  .project-card {
-    flex: 0 0 560px;
-    width: 560px;
-  }
+/* Image Slider inside Box 1 */
+.project-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
-  .projects-track {
-    padding-inline: calc((100vw - 560px) / 2);
-    gap: 32px;
+.slider-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-luxury), transform 1.4s var(--ease-luxury);
+}
+
+.slider-img.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+@media (hover: hover) {
+  .project-box:hover .slider-img.is-active {
+    transform: scale(1.03);
   }
 }
 
-/* Mobile (< 640px): fluid, capped at 440px */
-@media (max-width: 640px) {
-  .project-card {
-    flex: 0 0 min(88vw, 440px);
-    width: min(88vw, 440px);
-    border-radius: 16px;
-  }
+/* Slider Controls */
+.slider-controls {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: var(--space-24);
+  pointer-events: none;
+  /* Let clicks pass through except on buttons */
+}
 
-  .projects-track {
-    padding-inline: max(24px, calc((100vw - min(88vw, 440px)) / 2));
-    gap: 20px;
-  }
+.slider-btn {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-fg);
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Show buttons on hover */
+.project-box:hover .slider-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slider-btn:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+.slider-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.5;
 }
 
 
@@ -1413,23 +1420,20 @@ h6 {
   }
 }
 
-.marquee-item {
+.marquee-logo {
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-inline: 3rem;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  white-space: nowrap;
-  color: color-mix(in srgb, var(--color-muted-fg) 40%, transparent);
-  transition: color 0.5s ease;
+  display: block;
+  height: clamp(30px, 4vw, 50px);
+  width: auto;
+  object-fit: contain;
+  padding-inline: 4rem;
+  filter: grayscale(100%) opacity(40%);
+  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.marquee-item:hover {
-  color: color-mix(in srgb, var(--color-muted-fg) 70%, transparent);
+.marquee-logo:hover {
+  filter: grayscale(0%) opacity(100%);
+  transform: scale(1.05);
 }
 
 /* ============================================================
