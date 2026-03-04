@@ -468,6 +468,12 @@ h6 {
   transform: rotate(-45deg) translate(3.5px, -3.5px);
 }
 
+@media (max-width: 1023px) {
+  .hamburger.open span {
+    background-color: var(--color-primary) !important;
+  }
+}
+
 /* Mobile Menu Overlay */
 .mobile-menu {
   position: fixed;
@@ -1030,6 +1036,12 @@ h6 {
   overflow: hidden;
 }
 
+@media (max-width: 1023px) {
+  .services-section {
+    padding-top: var(--space-24);
+  }
+}
+
 .services-h2 {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 4rem);
@@ -1062,6 +1074,13 @@ h6 {
   position: relative;
   min-height: 400px;
   transition: opacity 0.5s var(--ease-luxury), transform 0.5s var(--ease-luxury), background-color 0.5s var(--ease-luxury);
+}
+
+@media (max-width: 1023px) {
+  .service-row {
+    padding-block: var(--space-24);
+    gap: var(--space-24);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1128,6 +1147,12 @@ h6 {
   letter-spacing: 0.08em;
   color: var(--color-fg);
   margin-bottom: var(--space-16);
+}
+
+@media (max-width: 1023px) {
+  .services-h2 {
+    margin-bottom: var(--space-32);
+  }
 }
 
 .service-description {
@@ -1431,6 +1456,13 @@ h6 {
   transition: filter 0.5s ease, transform 0.5s ease;
 }
 
+@media (max-width: 1023px) {
+  .marquee-logo {
+    height: 105px;
+    padding-inline: 7rem;
+  }
+}
+
 .marquee-logo:hover {
   filter: grayscale(0%) opacity(100%);
   transform: scale(1.05);
@@ -1591,6 +1623,13 @@ address {
   border-top: 1px solid color-mix(in srgb, var(--color-bg) 10%, transparent);
   padding-top: var(--space-64);
   padding-bottom: var(--space-48);
+}
+
+@media (max-width: 1023px) {
+  .site-footer {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-24);
+  }
 }
 
 
