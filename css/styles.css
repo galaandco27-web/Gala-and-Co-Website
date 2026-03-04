@@ -363,7 +363,7 @@ h6 {
 }
 
 .brand-logo-img {
-  height: clamp(54px, 5.5vw, 64px);
+  height: clamp(74px, 7.5vw, 88px);
   width: auto;
   object-fit: contain;
   display: block;
@@ -1590,7 +1590,7 @@ address {
 
 
 .footer-logo-img {
-  height: clamp(70px, 6.5vw, 85px);
+  height: clamp(95px, 9vw, 115px);
   width: auto;
   object-fit: contain;
   margin-bottom: var(--space-8);
