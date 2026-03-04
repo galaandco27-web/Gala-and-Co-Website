@@ -363,10 +363,12 @@ h6 {
 }
 
 .brand-logo-img {
-  height: clamp(74px, 7.5vw, 88px);
+  height: clamp(54px, 5.5vw, 64px);
   width: auto;
   object-fit: contain;
   display: block;
+  transform: scale(3);
+  transform-origin: left center;
 }
 
 .nav-desktop {
@@ -1590,7 +1592,6 @@ address {
 
 
 .footer-logo-img {
-  height: clamp(95px, 9vw, 115px);
   width: auto;
   object-fit: contain;
   margin-bottom: var(--space-8);
