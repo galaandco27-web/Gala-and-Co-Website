@@ -1620,9 +1620,8 @@ address {
    ============================================================ */
 .blog-section {
   position: relative;
-  padding-block: var(--space-80);
+  padding-block: var(--space-48) var(--space-80);
   background-color: var(--color-bg);
-  border-top: 1px solid var(--color-border);
 }
 
 .blog-header {
@@ -1635,10 +1634,10 @@ address {
 .blog-h2 {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-fg);
   margin-bottom: var(--space-8);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
 }
 
 .blog-sub {
