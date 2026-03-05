@@ -280,88 +280,84 @@
 
     <!-- PROJECTS SECTION -->
     <section class="projects-section" id="projects" aria-labelledby="projects-heading">
-      <div class="sticky-gallery-container">
-        <!-- Header lives inside so it stays visible while gallery pins -->
-        <div class="projects-gallery-header reveal">
-          <span class="section-eyebrow">Signature Projects</span>
-          <h2 class="projects-h2" id="projects-heading">
-            <span class="accent">Ongoing Projects.</span>
-          </h2>
-        </div>
+      <div class="projects-gallery-header reveal">
+        <span class="section-eyebrow">Signature Projects</span>
+        <h2 class="projects-h2" id="projects-heading">
+          <span class="accent">Ongoing Projects.</span>
+        </h2>
+      </div>
 
-        <div class="projects-carousel-wrapper">
-          <div class="projects-track" role="list">
-            <article class="project-card" role="listitem">
-              <img src="assets/images/project 1 a.jpg" alt="Signature Project Architectural Detail" loading="lazy" />
-              <div class="project-overlay" aria-hidden="true"></div>
-            </article>
-            <article class="project-card" role="listitem">
-              <img src="assets/images/project 1 b.jpg" alt="Signature Project Interior Design" loading="lazy" />
-              <div class="project-overlay" aria-hidden="true"></div>
-            </article>
-            <article class="project-card" role="listitem">
-              <img src="assets/images/project 1 c.jpg" alt="Signature Project Facade" loading="lazy" />
-              <div class="project-overlay" aria-hidden="true"></div>
-            </article>
-            <article class="project-card" role="listitem">
-              <img src="assets/images/project 1 d.jpg" alt="Signature Project Premium Living" loading="lazy" />
-              <div class="project-overlay" aria-hidden="true"></div>
-            </article>
-            <article class="project-card" role="listitem">
-              <img src="assets/images/project 1 e.jpg" alt="Signature Project Luxury Space" loading="lazy" />
-              <div class="project-overlay" aria-hidden="true"></div>
-            </article>
-            <article class="project-card" role="listitem">
-              <img src="assets/images/project 1 f.jpg" alt="Signature Project Urban Context" loading="lazy" />
-              <div class="project-overlay" aria-hidden="true"></div>
-            </article>
-            <article class="project-card" role="listitem">
-              <img src="assets/images/project 1 g.jpg" alt="Signature Project Sunset View" loading="lazy" />
-              <div class="project-overlay" aria-hidden="true"></div>
-            </article>
-            <article class="project-card" role="listitem">
-              <img src="assets/images/project 1 h.jpg" alt="Signature Project Evening Perspective" loading="lazy" />
-              <div class="project-overlay" aria-hidden="true"></div>
-            </article>
-            <article class="project-card" role="listitem">
-              <img src="assets/images/Project 2.jpeg" alt="Signature Project Master Development" loading="lazy" />
-              <div class="project-overlay" aria-hidden="true"></div>
-            </article>
+      <div class="projects-grid">
+        <!-- Project Box 1 — Image Slider -->
+        <article class="project-box" role="region" aria-label="Project 1 Image Slider">
+          <div class="project-slider" id="project-slider-1">
+            <img src="assets/images/project 1 a.jpg" alt="Signature Project Architectural Detail"
+              class="slider-img is-active" loading="lazy" />
+            <img src="assets/images/project 1 b.jpg" alt="Signature Project Interior Design" class="slider-img"
+              loading="lazy" />
+            <img src="assets/images/project 1 c.jpg" alt="Signature Project Facade" class="slider-img" loading="lazy" />
+            <img src="assets/images/project 1 d.jpg" alt="Signature Project Premium Living" class="slider-img"
+              loading="lazy" />
+            <img src="assets/images/project 1 e.jpg" alt="Signature Project Luxury Space" class="slider-img"
+              loading="lazy" />
+            <img src="assets/images/project 1 f.jpg" alt="Signature Project Urban Context" class="slider-img"
+              loading="lazy" />
+            <img src="assets/images/project 1 g.jpg" alt="Signature Project Sunset View" class="slider-img"
+              loading="lazy" />
+            <img src="assets/images/project 1 h.jpg" alt="Signature Project Evening Perspective" class="slider-img"
+              loading="lazy" />
+
+            <div class="slider-controls">
+              <button class="slider-btn prev-btn" aria-label="Previous image">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button class="slider-btn next-btn" aria-label="Next image">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
+        </article>
+
+        <!-- Project Box 2 — Static Image -->
+        <article class="project-box" role="region" aria-label="Project 2 Overview">
+          <img src="assets/images/Project 2.jpeg" alt="Signature Project Master Development" class="project-box-img"
+            loading="lazy" />
+        </article>
+      </div>
+    </section>
+
+    <!-- TRUSTED BY -->
+    <section class="trusted-section" aria-label="Trusted by industry leaders">
+      <div class="trusted-heading reveal">Trusted By Industry Leaders</div>
+      <div class="marquee-wrapper" aria-hidden="true">
+        <div class="marquee-fade-left"></div>
+        <div class="marquee-fade-right"></div>
+        <div class="marquee-track">
+          <!-- brands duplicated for seamless loop -->
+          <img src="assets/images/Indu-logo-1.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-2.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-3.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-4.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-5.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-6.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-7.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <!-- duplicate set -->
+          <img src="assets/images/Indu-logo-1.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-2.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-3.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-4.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-5.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-6.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
+          <img src="assets/images/Indu-logo-7.png" alt="Trusted Partner" class="marquee-logo" loading="lazy" />
         </div>
       </div>
     </section>
 
     <div class="footer-gradient-wrapper">
-      <!-- TRUSTED BY -->
-      <section class="trusted-section" aria-label="Trusted by industry leaders">
-        <div class="trusted-heading reveal">Trusted By Industry Leaders</div>
-        <div class="marquee-wrapper" aria-hidden="true">
-          <div class="marquee-fade-left"></div>
-          <div class="marquee-fade-right"></div>
-          <div class="marquee-track">
-            <!-- brands duplicated for seamless loop -->
-            <span class="marquee-item">LODHA GROUP</span>
-            <span class="marquee-item">GODREJ PROPERTIES</span>
-            <span class="marquee-item">TATA HOUSING</span>
-            <span class="marquee-item">MAHINDRA LIFESPACES</span>
-            <span class="marquee-item">SHAPOORJI PALLONJI</span>
-            <span class="marquee-item">OBEROI REALTY</span>
-            <span class="marquee-item">DLF LIMITED</span>
-            <span class="marquee-item">PRESTIGE ESTATES</span>
-            <!-- duplicate set -->
-            <span class="marquee-item">LODHA GROUP</span>
-            <span class="marquee-item">GODREJ PROPERTIES</span>
-            <span class="marquee-item">TATA HOUSING</span>
-            <span class="marquee-item">MAHINDRA LIFESPACES</span>
-            <span class="marquee-item">SHAPOORJI PALLONJI</span>
-            <span class="marquee-item">OBEROI REALTY</span>
-            <span class="marquee-item">DLF LIMITED</span>
-            <span class="marquee-item">PRESTIGE ESTATES</span>
-          </div>
-        </div>
-      </section>
-
       <!-- CTA BLOCK SECTION — Premium White Card -->
       <section class="cta-block-section" id="contact" aria-labelledby="cta-block-heading">
         <div class="cta-card">
