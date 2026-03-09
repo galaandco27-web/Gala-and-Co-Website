@@ -2597,3 +2597,94 @@ address {
 body.modal-open {
   overflow: hidden;
 }
+
+/* ============================================================
+   MOBILE HERO RECALIBRATION (<= 768px Widths)
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* STEP 5: Hero content vertical alignment */
+  .hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 100px 24px 80px;
+    margin: 0;
+  }
+
+  /* STEP 6: Background image control */
+  .hero-bg img {
+    object-position: center center !important;
+  }
+
+  /* STEP 1: Headline restructuring */
+  .hero-h1 {
+    max-width: 380px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: clamp(38px, 10vw, 54px) !important;
+    font-weight: 500 !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .hero-h1 br {
+    display: block;
+    /* ensure line breaks feel natural */
+  }
+
+  /* STEP 2: Paragraph text calibration */
+  .hero-tagline {
+    max-width: 320px;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    text-align: center;
+    margin-top: 32px !important;
+    /* Increased spacing to move down */
+    margin-inline: auto;
+    font-weight: 500 !important;
+    /* Slightly bolder for "Better" presence */
+  }
+
+  /* STEP 3: CTA button positioning */
+  .hero-cta {
+    margin-top: 40px !important;
+    /* Increased spacing to move down */
+    margin-bottom: 32px !important;
+    width: auto;
+    padding: 14px 28px !important;
+    /* Slightly larger button */
+    align-self: center;
+  }
+
+  /* STEP 4: Scroll indicator repositioning */
+  .scroll-indicator {
+    position: static !important;
+    transform: none !important;
+    margin-top: 48px !important;
+    /* Increased spacing to move down */
+    opacity: 0.8 !important;
+  }
+
+  .hero-section.content-visible .scroll-indicator {
+    opacity: 0.8 !important;
+  }
+
+  /* STEP 7: Logo + Navbar Mobile Adjustment */
+  .brand-logo-img {
+    height: 40px !important;
+  }
+
+  .header-inner {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  /* STEP 8: Hero Animation Mobile Tuning */
+  .hero-content>* {
+    transition-duration: 0.9s !important;
+  }
+}
