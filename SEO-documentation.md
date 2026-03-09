@@ -1,7 +1,7 @@
 # Gala & Co — SEO Implementation Documentation
 
 **Prepared for:** SEO Team
-**Website:** [galaandco.com](https://www.galaandco.com)
+**Website:** [galaandco.com](https://galaandco.com)
 **Date:** February 2026
 **Document covers:** All on-page SEO, technical SEO, structured data, performance, and accessibility implementations across the four-page static website.
 
@@ -27,10 +27,10 @@ The site was **converted from a JavaScript Single Page Application (SPA)** to a 
 
 | Page | URL | File |
 |---|---|---|
-| Home | `https://www.galaandco.com/` | `index.html` |
-| About | `https://www.galaandco.com/about.html` | `about.html` |
-| Services | `https://www.galaandco.com/services.html` | `services.html` |
-| Contact | `https://www.galaandco.com/contact.html` | `contact.html` |
+| Home | `https://galaandco.com/` | `index.html` |
+| About | `https://galaandco.com/about` | `about.html` |
+| Services | `https://galaandco.com/services` | `services.html` |
+| Contact | `https://galaandco.com/contact` | `contact.html` |
 
 ---
 
@@ -42,7 +42,7 @@ The site was **converted from a JavaScript Single Page Application (SPA)** to a 
 <title>Gala & Co | Luxury Real Estate Advisory & Contracting Mumbai</title>
 <meta name="description" content="Gala & Co delivers premium real estate advisory and world-class contracting in Mumbai. 50+ landmark projects, 12 years of excellence. Shaping spaces that reflect you." />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://www.galaandco.com/" />
+<link rel="canonical" href="https://galaandco.com/" />
 ```
 
 **H1:** `Shaping Spaces That Reflect You`
@@ -57,7 +57,7 @@ The site was **converted from a JavaScript Single Page Application (SPA)** to a 
 <title>About Gala & Co | A Decade of Real Estate Excellence in Mumbai</title>
 <meta name="description" content="Learn about Gala & Co — 12+ years of premium real estate advisory and contracting in Mumbai. Meet the team behind 50+ landmark projects built with precision and purpose." />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://www.galaandco.com/about.html" />
+<link rel="canonical" href="https://galaandco.com/about" />
 ```
 
 **H1:** `About Gala & Co`
@@ -71,7 +71,7 @@ The site was **converted from a JavaScript Single Page Application (SPA)** to a 
 <title>Services | Real Estate Advisory & Contracting — Gala & Co</title>
 <meta name="description" content="Gala & Co offers premium real estate advisory and end-to-end contracting services in Mumbai. From investment strategy to luxury construction — two pillars, one standard of excellence." />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://www.galaandco.com/services.html" />
+<link rel="canonical" href="https://galaandco.com/services" />
 ```
 
 **H1:** `Two Pillars. One Standard.`
@@ -85,7 +85,7 @@ The site was **converted from a JavaScript Single Page Application (SPA)** to a 
 <title>Contact Gala & Co | Start Your Real Estate Journey in Mumbai</title>
 <meta name="description" content="Get in touch with Gala & Co — Mumbai's trusted real estate advisory and contracting firm. Visit us at Lower Parel or call +91 98765 43210. Let's create something extraordinary together." />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://www.galaandco.com/contact.html" />
+<link rel="canonical" href="https://galaandco.com/contact" />
 ```
 
 **H1:** `Contact Gala & Co`
@@ -101,8 +101,8 @@ Implemented on all 4 pages. Enables rich previews when shared on LinkedIn, Whats
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Gala & Co | Luxury Real Estate Advisory & Contracting Mumbai" />
 <meta property="og:description" content="Gala & Co delivers premium real estate advisory and world-class contracting in Mumbai. 50+ landmark projects, 12 years of excellence." />
-<meta property="og:url" content="https://www.galaandco.com/" />
-<meta property="og:image" content="https://www.galaandco.com/assets/images/hero-building.jpg" />
+<meta property="og:url" content="https://galaandco.com/" />
+<meta property="og:image" content="https://galaandco.com/assets/images/hero-building.jpg" />
 ```
 
 Each page has a **unique OG image** pointing to the most relevant imagery for that page.
@@ -130,7 +130,7 @@ Present on **every** page as the core entity definition.
   "@type": "RealEstateAgent",
   "name": "Gala & Co",
   "description": "Premium real estate advisory and contracting services in Mumbai, India.",
-  "url": "https://www.galaandco.com/",
+  "url": "https://galaandco.com/",
   "telephone": "+91-98765-43210",
   "email": "connect@galaandco.com",
   "address": {
@@ -161,11 +161,11 @@ Helps Google understand the site entity and enables sitelinks search box in the 
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Gala & Co",
-  "url": "https://www.galaandco.com/",
+  "url": "https://galaandco.com/",
   "description": "Luxury Real Estate Advisory & Contracting — Shaping Spaces That Reflect You",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://www.galaandco.com/?s={search_term_string}",
+    "target": "https://galaandco.com/?s={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
@@ -184,7 +184,7 @@ Two separate `Service` schema blocks — one per service line — with full `Off
   "serviceType": "Real Estate Advisory",
   "name": "Real Estate Advisory",
   "description": "Strategic guidance for investors, developers, and individuals seeking premium real estate opportunities...",
-  "provider": { "@type": "RealEstateAgent", "name": "Gala & Co", "url": "https://www.galaandco.com/" },
+  "provider": { "@type": "RealEstateAgent", "name": "Gala & Co", "url": "https://galaandco.com/" },
   "areaServed": { "@type": "City", "name": "Mumbai" },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -222,7 +222,7 @@ Two separate `Service` schema blocks — one per service line — with full `Off
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contact Gala & Co",
-  "url": "https://www.galaandco.com/contact.html",
+  "url": "https://galaandco.com/contact",
   "mainEntity": {
     "@type": "RealEstateAgent",
     "name": "Gala & Co",
@@ -291,47 +291,47 @@ Every page declares its own canonical to prevent duplicate content issues:
 
 ```html
 <!-- index.html -->
-<link rel="canonical" href="https://www.galaandco.com/" />
+<link rel="canonical" href="https://galaandco.com/" />
 
 <!-- about.html -->
-<link rel="canonical" href="https://www.galaandco.com/about.html" />
+<link rel="canonical" href="https://galaandco.com/about" />
 
 <!-- services.html -->
-<link rel="canonical" href="https://www.galaandco.com/services.html" />
+<link rel="canonical" href="https://galaandco.com/services" />
 
 <!-- contact.html -->
-<link rel="canonical" href="https://www.galaandco.com/contact.html" />
+<link rel="canonical" href="https://galaandco.com/contact" />
 ```
 
 ---
 
 ## 10. `sitemap.xml`
 
-Located at the root: `https://www.galaandco.com/sitemap.xml`
+Located at the root: `https://galaandco.com/sitemap.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.galaandco.com/</loc>
+    <loc>https://galaandco.com/</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.galaandco.com/about.html</loc>
+    <loc>https://galaandco.com/about</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.galaandco.com/services.html</loc>
+    <loc>https://galaandco.com/services</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.galaandco.com/contact.html</loc>
+    <loc>https://galaandco.com/contact</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -345,12 +345,12 @@ Located at the root: `https://www.galaandco.com/sitemap.xml`
 
 ## 11. `robots.txt`
 
-Located at: `https://www.galaandco.com/robots.txt`
+Located at: `https://galaandco.com/robots.txt`
 
 ```
 User-agent: *
 Allow: /
-Sitemap: https://www.galaandco.com/sitemap.xml
+Sitemap: https://galaandco.com/sitemap.xml
 ```
 
 All crawlers permitted site-wide. Sitemap is declared inline for immediate discovery.
@@ -392,7 +392,7 @@ Google's crawlers use the accessibility tree as part of their quality signals.
 
 ## 14. Internal Linking Structure
 
-All inter-page links use descriptive anchor text and correct `.html` paths.
+All inter-page links use descriptive anchor text and correct paths.
 
 ```
 index.html ──→ about.html, services.html, contact.html, #about, #services, #projects, #contact
@@ -406,7 +406,7 @@ The logo on every page links back to `index.html` with `aria-label="Gala & Co �
 Contact click-to-call and click-to-email links are present and crawlable:
 ```html
 <a href="tel:+919876543210">+91 98765 43210</a>
-<a href="mailto:connect@galaandco.com">connect@galaandco.com</a>
+<a href="mailto:galaandco27@gmail.com">galaandco27@gmail.com</a>
 ```
 
 ---
