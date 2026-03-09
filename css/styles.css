@@ -2597,3 +2597,84 @@ address {
 body.modal-open {
   overflow: hidden;
 }
+
+/* ============================================================
+   MOBILE HERO RECALIBRATION (<= 768px Widths)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* STEP 5: Hero content vertical alignment */
+  .hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 100px 24px 80px;
+    margin: 0;
+  }
+
+  /* STEP 6: Background image control */
+  .hero-bg img {
+    object-position: center center !important;
+  }
+
+  /* STEP 1: Headline restructuring */
+  .hero-h1 {
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: clamp(28px, 5.5vw, 36px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .hero-h1 br {
+    display: block; /* ensure line breaks feel natural */
+  }
+
+  /* STEP 2: Paragraph text calibration */
+  .hero-tagline {
+    max-width: 320px;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    text-align: center;
+    margin-top: 16px !important;
+    margin-inline: auto;
+  }
+
+  /* STEP 3: CTA button positioning */
+  .hero-cta {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+    width: auto;
+    padding: 12px 22px !important;
+    align-self: center;
+  }
+
+  /* STEP 4: Scroll indicator repositioning */
+  .scroll-indicator {
+    position: static !important;
+    transform: none !important;
+    margin-top: 12px !important;
+    opacity: 0.8 !important;
+  }
+
+  .hero-section.content-visible .scroll-indicator {
+    opacity: 0.8 !important; 
+  }
+
+  /* STEP 7: Logo + Navbar Mobile Adjustment */
+  .brand-logo-img {
+    height: 40px !important;
+  }
+  .header-inner {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  /* STEP 8: Hero Animation Mobile Tuning */
+  .hero-content > * {
+    transition-duration: 0.9s !important;
+  }
+}
