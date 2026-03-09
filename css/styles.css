@@ -354,6 +354,8 @@ h6 {
   align-items: center;
   justify-content: space-between;
   height: 5rem;
+  position: relative;
+  /* Setup absolute centering for nav */
 }
 
 .logo {
@@ -374,7 +376,12 @@ h6 {
 .nav-desktop {
   display: none;
   align-items: center;
+  justify-content: center;
   gap: 2.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
 }
 
 .nav-desktop a {
@@ -2596,6 +2603,59 @@ address {
 /* Prevent body scroll when modal open */
 body.modal-open {
   overflow: hidden;
+}
+
+/* ============================================================
+   MOBILE STICKY CTA
+   ============================================================ */
+.mobile-sticky-cta {
+  display: none;
+  /* Hidden on desktop */
+}
+
+@keyframes pulse-attention {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(159, 94, 30, 0.2);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(159, 94, 30, 0.4);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(159, 94, 30, 0.2);
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-sticky-cta {
+    display: flex;
+    position: fixed;
+    bottom: var(--space-24);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: calc(100% - var(--space-48));
+    max-width: 380px;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-primary);
+    /* Maroon */
+    color: #FFFFFF;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: pulse-attention 3s infinite ease-in-out;
+  }
 }
 
 /* ============================================================
