@@ -2634,27 +2634,32 @@ body.modal-open {
   .mobile-sticky-cta {
     display: flex;
     position: fixed;
-    bottom: var(--space-24);
-    left: 50%;
-    transform: translateX(-50%);
+    top: 6rem;
+    /* Directly below the 5rem header */
+    right: 0;
+    /* Anchor to the right edge */
     z-index: 1000;
-    width: calc(100% - var(--space-48));
-    max-width: 380px;
     align-items: center;
     justify-content: center;
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 0.6rem;
     background-color: var(--color-primary);
     /* Maroon */
     color: #FFFFFF;
     font-family: var(--font-body);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    /* Slightly smaller for vertical fit */
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    animation: pulse-attention 3s infinite ease-in-out;
+    border-radius: 0 8px 8px 0;
+    /* Pre-compensate for 180deg flip: original right is rounded, so visual left becomes rounded */
+    box-shadow: 4px -4px 12px rgba(0, 0, 0, 0.15);
+    /* Pre-compensate shadow */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    /* Reads bottom to top */
+    transform-origin: center;
   }
 }
 
