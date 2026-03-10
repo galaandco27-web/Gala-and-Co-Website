@@ -843,112 +843,6 @@ h6 {
 
 /* Reveal states removed */
 
-/* ---- Scroll Indicator ---- */
-.scroll-indicator {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.625rem;
-  z-index: 15;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  /* Breathing animation */
-  animation: scroll-breathe 3s ease-in-out infinite;
-  /* Hidden until content reveals */
-  opacity: 0;
-  transition: opacity 0.6s ease 0.8s;
-}
-
-.hero-section.content-visible .scroll-indicator {
-  opacity: 1;
-}
-
-
-@keyframes scroll-breathe {
-
-  0%,
-  100% {
-    opacity: 0.45;
-  }
-
-  50% {
-    opacity: 0.9;
-  }
-}
-
-@keyframes scroll-drop {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-}
-
-.scroll-indicator:hover {
-  animation: none;
-  opacity: 1;
-}
-
-.scroll-indicator-label {
-  font-family: var(--font-body);
-  font-size: 0.5625rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: rgba(250, 247, 242, 0.65);
-}
-
-.scroll-indicator-track {
-  width: 1px;
-  height: 2.5rem;
-  background: rgba(250, 247, 242, 0.15);
-  overflow: hidden;
-  border-radius: 1px;
-  position: relative;
-}
-
-.scroll-indicator-line {
-  width: 1px;
-  height: 50%;
-  background-color: var(--color-primary-fg);
-  animation: scroll-drop 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-}
-
-@keyframes scroll-line-drop {
-  0% {
-    transform: translateY(-100%);
-    opacity: 1;
-  }
-
-  70% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-}
-
-.scroll-indicator:hover .scroll-indicator-line {
-  animation-play-state: paused;
-  transform: translateY(0);
-}
-
 
 /* ============================================================
    ABOUT SECTION
@@ -2055,10 +1949,6 @@ address {
     gap: var(--space-32);
   }
 
-  /* Scroll indicator repositioned slightly on wide screens */
-  .scroll-indicator {
-    bottom: 3rem;
-  }
 }
 
 /* ============================================================
@@ -2099,16 +1989,6 @@ address {
     animation: none;
   }
 
-  .scroll-indicator {
-    animation: none;
-    opacity: 0.7;
-  }
-
-  .scroll-indicator-line {
-    animation: none;
-    transform: translateY(0);
-    opacity: 0.6;
-  }
 
   @keyframes header-slide-down {
     from {
@@ -2723,19 +2603,6 @@ body.modal-open {
     padding: 14px 28px !important;
     /* Slightly larger button */
     align-self: center;
-  }
-
-  /* STEP 4: Scroll indicator repositioning */
-  .scroll-indicator {
-    position: static !important;
-    transform: none !important;
-    margin-top: 48px !important;
-    /* Increased spacing to move down */
-    opacity: 0.8 !important;
-  }
-
-  .hero-section.content-visible .scroll-indicator {
-    opacity: 0.8 !important;
   }
 
   /* STEP 7: Logo + Navbar Mobile Adjustment */
