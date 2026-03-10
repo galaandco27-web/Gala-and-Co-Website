@@ -260,7 +260,6 @@ function initHeroScroll() {
   const heroBg = document.querySelector('.hero-bg');
   const heroGradient = document.querySelector('.hero-section .luxury-gradient-overlay');
   const heroH1 = document.querySelector('.hero-h1');
-  const scrollIndicator = document.querySelector('.scroll-indicator');
 
   if (!heroSection) return;
   if (prefersReducedMotion) return;
@@ -296,11 +295,6 @@ function initHeroScroll() {
       heroH1.style.transform = `translateY(${-progress * 20}px)`;
     }
 
-    // Scroll indicator fades on scroll
-    if (scrollIndicator) {
-      const indicatorFade = Math.max(0, 1 - progress * 5);
-      scrollIndicator.style.opacity = indicatorFade;
-    }
   };
 
   const onScroll = () => {
@@ -473,20 +467,6 @@ function initProjectSlider() {
   setTimeout(preloadImages, 1000);
 }
 
-
-/* ============================================================
-   SCROLL INDICATOR — Click to scroll to next section
-   ============================================================ */
-function initScrollIndicator() {
-  const btn = document.getElementById('scroll-indicator-btn');
-  if (!btn) return;
-
-  btn.addEventListener('click', () => {
-    const target = document.querySelector('#about');
-    if (!target) return;
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-}
 
 /* ============================================================
    MAGNETIC CTA — Very subtle (2px max shift within 50px radius)
@@ -751,6 +731,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCinematicLoad();
   initMouseParallax();
   initHeroScroll();
-  initScrollIndicator();
   initMagneticCTA();
 });
