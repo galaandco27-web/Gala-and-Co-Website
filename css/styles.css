@@ -1365,9 +1365,13 @@ h6 {
 }
 
 @media (max-width: 768px) {
+  .marquee-track {
+    animation-duration: 20s;
+  }
+
   .marquee-logo {
     height: 85px;
-    padding-inline: 3.5rem;
+    padding-inline: 1.5rem;
   }
 }
 
