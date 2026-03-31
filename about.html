@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="Nn16JpbYXZBHYuF7Z4n5JyGVKBVfDWSgGUAN2DKBYeE" />
+
+  <!-- Primary SEO -->
+  <title>About Gala & Co | Real Estate & Construction Experts</title>
+  <meta name="description"
+    content="Structured real estate and construction solutions by Gala & Co across Pune and Mumbai." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://galaandco.com/about" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Gala & Co | Real Estate & Construction Experts" />
+  <meta property="og:description"
+    content="Structured real estate and construction solutions by Gala & Co across Pune and Mumbai." />
+  <meta property="og:url" content="https://galaandco.com/about" />
+  <meta property="og:image" content="https://galaandco.com/assets/images/hero-building.jpg" />
+
+  <link rel="preload" as="image" href="assets/images/project 1 a.jpg" fetchpriority="high" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Specific styles for About page */
+    .about-hero-section {
+      padding-top: 10rem;
+      padding-bottom: var(--space-80);
+      background-color: var(--color-bg);
+      overflow: hidden;
+    }
+    
+    .visual-break-section {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      min-height: 400px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .visual-break-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .visual-break-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
+      z-index: 2;
+    }
+
+    .visual-break-text {
+      position: relative;
+      z-index: 3;
+      color: var(--color-bg);
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      letter-spacing: 0.08em;
+      text-align: center;
+      padding: 0 2rem;
+      line-height: 1.2;
+    }
+
+    .founder-image-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .founder-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+    
+    .founder-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background-color: transparent;
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.4s var(--ease-luxury);
+      width: 100%;
+    }
+
+    .founder-cta:hover {
+      background-color: var(--color-primary);
+      color: var(--color-primary-fg);
+      transform: translateY(-2px);
+    }
+
+    .founder-cta svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .brand-logo-subpage {
+      height: clamp(54px, 5.5vw, 64px);
+      width: auto;
+      object-fit: contain;
+      display: block;
+      transform: scale(3);
+      transform-origin: left center;
+    }
+
+    /* Keep header styling solid for subpage */
+    .site-header.transparent {
+      background-color: var(--color-bg) !important;
+      border-bottom: 1px solid var(--color-border) !important;
+    }
+    .site-header.transparent .logo,
+    .site-header.transparent .nav-desktop a,
+    .site-header.transparent .hamburger span {
+      color: var(--color-fg) !important;
+    }
+    .site-header.transparent .hamburger span {
+      background-color: var(--color-fg) !important;
+    }
+    .site-header.transparent .btn-request-visit {
+      color: var(--color-primary) !important;
+      border-color: var(--color-primary) !important;
+    }
+    .site-header.transparent .btn-request-visit:hover {
+      background-color: var(--color-primary) !important;
+      color: var(--color-primary-fg) !important;
+    }
+
+    @media (min-width: 1024px) {
+      .about-page-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-64);
+        align-items: center;
+      }
+    }
+    
+    @media (max-width: 1023px) {
+      .about-page-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-32);
+      }
+      .founder-row {
+        flex-direction: column-reverse; /* Image above text on mobile */
+      }
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header scrolled" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo header-logo visible" aria-label="Gala &amp; Co — Home" style="opacity: 1;">
+        <!-- Using custom class to prevent main.js from swapping the logo to white -->
+        <img src="assets/images/logo.png" alt="Gala &amp; Co Logo" class="brand-logo-subpage">
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary navigation">
+        <a href="/about" class="active">About</a>
+        <a href="/#services">Services</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-request-visit open-visit-modal" aria-label="Open request a visit form">Request a Visit</button>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="/about" class="active">About</a>
+    <a href="/#services">Services</a>
+    <a href="/#projects">Projects</a>
+    <a href="/#contact">Contact</a>
+    <button class="btn-mobile-cta open-visit-modal" aria-label="Open request a visit form">Request a Visit</button>
+  </div>
+
+  <main id="main-content">
+
+    <!-- SECTION 1: HERO (ABOUT INTRO) -->
+    <section class="about-hero-section" id="hero-about">
+      <div class="container">
+        <div class="about-page-grid">
+          <div>
+            <span class="section-eyebrow reveal">The Vision</span>
+            <h1 class="about-h2 reveal delay-1">
+              ABOUT <span class="accent">GALA &amp; CO</span>
+            </h1>
+            <div class="about-body reveal delay-2">
+              <p style="margin-bottom: 1.5rem;">
+                Gala &amp; Co represents a structured approach to real estate and construction, where every decision is backed by insight and every project is executed with precision.
+              </p>
+              <p style="margin-bottom: 1.5rem;">
+                Based in Pune and Mumbai, the firm works with developers, investors, end users and with the NRI segment, delivering structured support across residential and commercial property transactions. This includes supporting clients in buying, selling, and leasing residential and commercial properties, along with new and resale transactions to investment-led acquisitions, the focus remains on clarity, due diligence and value-driven decision making.
+              </p>
+              <p style="margin-bottom: 1.5rem;">
+                Gala &amp; Co also partners with developers on a mandate basis including sole selling assignments, taking ownership of project sales and helping streamline the overall sales process. From project positioning and buyer outreach to deal closure, the approach is designed to create efficiency, consistency and stronger outcomes.
+              </p>
+              <p style="margin-bottom: 1.5rem;">
+                Gala &amp; Co also undertakes contracting with a specialization in RCC (Reinforced Cement Concrete) works for residential and commercial developments, along with infrastructure development. Each assignment is handled with a strong emphasis on execution quality, site discipline and adherence to timelines.
+              </p>
+              <p style="margin-bottom: 1.5rem;">
+                By combining real estate expertise with on-ground execution, Gala &amp; Co offers a more cohesive approach ensuring that decisions are not only well-informed but also effectively implemented.
+              </p>
+              <p style="font-weight: 500; font-size: 1.05rem; color: var(--color-fg); margin-top: 2rem; padding-left: 1.25rem; border-left: 2px solid var(--color-primary);">
+                The future rises with Gala — a philosophy reflected in every project undertaken, with a consistent focus on building with intent, precision, and long-term value.
+              </p>
+            </div>
+          </div>
+          <div class="about-image-wrap reveal-right">
+            <img src="assets/images/project 1 a.jpg" alt="Gala &amp; Co Site Execution" width="800" height="1067" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: VISUAL BREAK / TRUST ELEMENT -->
+    <section class="visual-break-section">
+      <img src="assets/images/project-construction.jpg" alt="Construction detail" class="visual-break-img" />
+      <div class="visual-break-overlay"></div>
+      <h2 class="visual-break-text reveal">
+        Structured. Precise.<br /><span style="color: var(--color-primary);">Value-Driven.</span>
+      </h2>
+    </section>
+
+    <!-- SECTION 3: ABOUT THE FOUNDER -->
+    <section class="about-section" id="about-founder">
+      <div class="container">
+        <div class="about-page-grid founder-row">
+          <div class="founder-image-col reveal-left">
+            <img src="assets/images/lifestyle-interior.jpg" alt="Maitri K. Gala" class="founder-img" />
+            <a href="#" class="founder-cta" aria-label="Connect with Maitri K. Gala on LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              CONNECT WITH ME ON LINKEDIN
+            </a>
+          </div>
+          <div>
+            <span class="section-eyebrow reveal">Leadership</span>
+            <h2 class="about-h2 reveal delay-1">
+              ABOUT THE FOUNDER
+            </h2>
+            <div class="about-body reveal delay-2">
+              <p style="margin-bottom: 1.5rem;">
+                Maitri K. Gala is the Founder of Gala &amp; Co, leading the firm across real estate and construction.
+              </p>
+              <p style="margin-bottom: 1.5rem;">
+                With experience in the industry, she has previously worked with Nyati Group, Pune, where she was involved in luxury and international sales, as well as business development. This exposure has contributed to her understanding of high-value transactions, client handling, and market positioning.
+              </p>
+              <p style="margin-bottom: 1.5rem;">
+                Her work is focused on building a more structured approach to real estate one that combines deal-making with execution, instead of treating them as separate functions. She is directly involved in developer mandates, high-value transactions and contracting projects, ensuring that every aspect is handled with control and clarity.
+              </p>
+              <p style="margin-bottom: 1.5rem;">
+                Over time she has built strong working relationships with developers, investors and the NRI market, positioning Gala &amp; Co as a firm that is not just involved in transactions, but in how projects are positioned, sold, and delivered.
+              </p>
+              <p style="margin-bottom: 1.5rem; font-weight: 500; color: var(--color-fg);">
+                Her focus is clear: build a firm that operates with intent, maintains high standards, and delivers consistently across both real estate and construction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: FINAL CTA -->
+    <div class="footer-gradient-wrapper">
+      <section class="cta-block-section" id="contact" aria-labelledby="cta-block-heading">
+        <div class="cta-card">
+          <span class="cta-card-eyebrow reveal">Begin Your Journey</span>
+          <h2 class="cta-card-h2 reveal delay-1" id="cta-block-heading">
+            Looking to work with Gala &amp; Co?<br />
+          </h2>
+          <button class="cta-card-btn open-visit-modal reveal delay-3" aria-label="Open request a visit form" style="margin-top: 2rem;">
+            Get In Touch
+          </button>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <img src="assets/images/White_Logo.png" alt="Gala &amp; Co Logo" class="brand-logo-img footer-logo-img">
+          <p class="footer-tagline">The Future rises with Gala.</p>
+        </div>
+
+        <div class="footer-col-nav">
+          <nav aria-label="Footer navigation">
+            <a href="/about">About</a>
+            <a href="/#services">Services</a>
+            <a href="/#projects">Projects</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-col-social">
+          <nav aria-label="Social media">
+            <a href="https://www.instagram.com/galaandco_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/in/maitri-k-gala-818368270/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.facebook.com/people/Maitri-Gala/pfbid032Fag9Bw9cJ5nBzQH3PmGudGNUkjH5dsN3UxyiwtXo1rvR3pL4UCdbM5anXoiC4xDl/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </nav>
+        </div>
+
+        <div class="footer-col-contact">
+          <address>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Phone</span>
+              <p class="footer-contact-value"><a href="tel:+919503696035">+91 95036 96035</a></p>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Email</span>
+              <p class="footer-contact-value"><a href="mailto:galaandco27@gmail.com">galaandco27@gmail.com</a></p>
+            </div>
+          </address>
+        </div>
+
+        <div class="footer-col-address">
+          <address>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Address</span>
+              <p class="footer-contact-value">NM Service Station, Opp GPO,<br />Sadhu Vaswani Chowk, Pune 411001</p>
+            </div>
+          </address>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================
+       VISIT MODAL
+       ====================================================== -->
+  <div class="visit-modal-overlay" id="visitModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="visit-modal-box" id="visitModalBox">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+
+      <div class="modal-form-state" id="modalFormState">
+        <div class="modal-header">
+          <span class="modal-eyebrow">Get In Touch</span>
+          <h3 class="modal-title" id="modal-title">Request a Visit</h3>
+        </div>
+
+        <form class="modal-form" id="visitForm" novalidate autocomplete="off">
+          <div class="modal-form-group">
+            <label class="modal-label" for="modal-name">Your Name <span class="modal-required">*</span></label>
+            <input class="modal-input" type="text" id="modal-name" name="modal-name" placeholder="e.g. Rohan Mehta" autocomplete="name" />
+            <span class="modal-error" id="modal-name-error" role="alert"></span>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="modal-email">Email Address <span class="modal-required">*</span></label>
+            <input class="modal-input" type="email" id="modal-email" name="modal-email" placeholder="e.g. rohan@example.com" autocomplete="email" />
+            <span class="modal-error" id="modal-email-error" role="alert"></span>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="modal-phone">Phone Number <span class="modal-required">*</span></label>
+            <input class="modal-input" type="tel" id="modal-phone" name="modal-phone" placeholder="10-digit mobile number" autocomplete="tel" maxlength="10" />
+            <span class="modal-error" id="modal-phone-error" role="alert"></span>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="modal-message">Message <span class="modal-optional">(Optional)</span></label>
+            <textarea class="modal-input modal-textarea" id="modal-message" name="modal-message" placeholder="Tell us about your vision..." rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="modal-submit-btn">Send Request</button>
+        </form>
+      </div>
+
+      <div class="modal-success-state" id="modalSuccessState" aria-live="polite">
+        <div class="modal-success-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="26" cy="26" r="24" />
+            <path d="M14 26l9 9 15-18" />
+          </svg>
+        </div>
+        <h3 class="modal-success-title">Thank you for reaching out.</h3>
+        <p class="modal-success-body">We will get back to you shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <a href="javascript:void(0)" class="mobile-sticky-cta open-visit-modal" aria-label="Request a Call Back">Request a Call Back</a>
+</body>
+</html>
