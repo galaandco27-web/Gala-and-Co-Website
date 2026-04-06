@@ -1087,7 +1087,7 @@ h6 {
 
 .service-tag:hover {
   border-color: var(--color-primary);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .service-image-wrap {
