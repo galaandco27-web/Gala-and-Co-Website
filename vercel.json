@@ -1,16 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/about",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/about.html",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/services",
       "destination": "/",
       "permanent": true
