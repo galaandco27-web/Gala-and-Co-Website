@@ -35,28 +35,13 @@
   <style>
     /* Specific styles for About page */
     .about-hero-section {
-      position: relative;
-      padding-top: 12rem;
-      padding-bottom: 8rem;
+      padding-top: 10rem;
+      padding-bottom: var(--space-80);
       background-color: var(--color-bg);
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    .about-hero-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
-    .about-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.85) 100%);
-      z-index: 2;
     }
     .about-hero-content {
       position: relative;
@@ -64,30 +49,7 @@
       max-width: 960px;
       margin-inline: auto;
       text-align: center;
-      color: var(--color-bg);
       padding-inline: var(--space-24);
-    }
-    .about-hero-content .section-eyebrow {
-      color: var(--color-bg);
-      opacity: 0.8;
-    }
-    .about-hero-content .about-h2 {
-      color: var(--color-bg);
-    }
-    .about-hero-content .about-h2 .accent {
-      color: var(--color-primary);
-    }
-    .about-hero-content .about-body p {
-      color: var(--color-bg);
-      opacity: 0.9;
-      line-height: 1.9;
-      font-size: 1.05rem;
-      font-weight: 300;
-    }
-    .about-hero-content .about-highlight {
-      border-color: var(--color-primary) !important;
-      color: var(--color-bg) !important;
-      opacity: 1 !important;
     }
     
     .visual-break-section {
@@ -274,9 +236,6 @@
 
     <!-- SECTION 1: HERO (ABOUT INTRO) -->
     <section class="about-hero-section" id="hero-about">
-      <img src="assets/images/project-commercial.jpg" alt="Commercial Project Architecture" class="about-hero-bg" loading="eager" />
-      <div class="about-hero-overlay"></div>
-      
       <div class="container about-hero-content">
         <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
           <span class="section-eyebrow reveal" style="margin-bottom: 0;">The Vision</span>
@@ -285,22 +244,22 @@
           </h1>
         </div>
         <div class="about-body reveal delay-2">
-          <p>
+          <p style="margin-bottom: 1.5rem;">
             Gala &amp; Co represents a structured approach to real estate and construction, where every decision is backed by insight and every project is executed with precision.
           </p>
-          <p>
+          <p style="margin-bottom: 1.5rem;">
             Based in Pune and Mumbai, the firm works with developers, investors, end users and with the NRI segment, delivering structured support across residential and commercial property transactions. This includes supporting clients in buying, selling, and leasing residential and commercial properties, along with new and resale transactions to investment-led acquisitions, the focus remains on clarity, due diligence and value-driven decision making.
           </p>
-          <p>
+          <p style="margin-bottom: 1.5rem;">
             Gala &amp; Co also partners with developers on a mandate basis including sole selling assignments, taking ownership of project sales and helping streamline the overall sales process. From project positioning and buyer outreach to deal closure, the approach is designed to create efficiency, consistency and stronger outcomes.
           </p>
-          <p>
+          <p style="margin-bottom: 1.5rem;">
             Gala &amp; Co also undertakes contracting with a specialization in RCC (Reinforced Cement Concrete) works for residential and commercial developments, along with infrastructure development. Each assignment is handled with a strong emphasis on execution quality, site discipline and adherence to timelines.
           </p>
-          <p>
+          <p style="margin-bottom: 1.5rem;">
             By combining real estate expertise with on-ground execution, Gala &amp; Co offers a more cohesive approach ensuring that decisions are not only well-informed but also effectively implemented.
           </p>
-          <p class="about-highlight" style="margin-top: 3rem; padding-left: 1.25rem; border-left: 2px solid var(--color-primary); display: inline-block; text-align: left;">
+          <p class="about-highlight" style="font-weight: 500; font-size: 1.05rem; color: var(--color-fg); margin-top: 2rem; padding-left: 1.25rem; border-left: 2px solid var(--color-primary); display: inline-block; text-align: left;">
             The future rises with Gala — a philosophy reflected in every project undertaken, with a consistent focus on building with intent, precision, and long-term value.
           </p>
         </div>
