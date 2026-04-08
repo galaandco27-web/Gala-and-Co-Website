@@ -2640,38 +2640,40 @@ body.modal-open {
    GLOBAL STICKY CTAS
    ============================================================ */
 
-/* Desktop Sticky CTA (Right Edge Vertical) */
+/* Desktop Sticky CTA (Right Edge Vertical Pill) */
 .desktop-sticky-cta {
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   top: 50%;
-  right: 1.5rem; /* Slight offset from right edge */
+  right: 0.5rem; /* Slight gap from edge */
   transform: translateY(-50%) rotate(180deg);
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-  padding: 1.75rem 0.5rem;
+  background-color: var(--color-primary); /* Deep red */
+  color: #ffffff; /* White text */
+  border: none;
+  padding: 1.75rem 0.6rem;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em; /* Increased letter spacing */
   text-transform: uppercase;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   z-index: 100;
-  transition: all 0.4s var(--ease-luxury);
-  border-radius: 0;
+  transition: all 0.3s ease;
+  border-radius: 8px; /* Rounded pill shape */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); /* Subtle shadow */
   cursor: pointer;
   text-decoration: none;
 }
 
 .desktop-sticky-cta:hover {
   background-color: var(--color-primary);
-  color: var(--color-primary-fg);
-  transform: translateY(-50%) rotate(180deg) scale(1.03);
-  box-shadow: 0 10px 30px rgba(159, 94, 30, 0.15);
+  color: #ffffff;
+  filter: brightness(1.2); /* Brightness increase on hover */
+  transform: translateY(-50%) rotate(180deg) scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 767px) {
