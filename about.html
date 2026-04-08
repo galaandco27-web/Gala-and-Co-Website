@@ -36,33 +36,49 @@
   <style>
     /* Specific styles for About page */
     .about-hero-section {
-      padding-top: 14rem;
-      padding-bottom: 12rem;
+      padding-top: 10rem;
+      padding-bottom: 8rem;
       background-color: var(--color-bg);
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .about-hero-content {
       position: relative;
       z-index: 3;
-      max-width: 1100px;
+      max-width: 1280px;
       margin-inline: auto;
-      text-align: center;
       padding-inline: var(--space-24);
+      display: grid;
+      gap: 3rem;
+      align-items: center;
     }
+
+    @media (min-width: 1024px) {
+      .about-hero-content {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 6rem;
+      }
+    }
+
+    .about-hero-title-col {
+      text-align: left;
+    }
+
+    .about-hero-title-col .about-h2 {
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 0;
+    }
+
     .premium-highlight-box {
       background: rgba(0, 0, 0, 0.02);
       border: 1px solid rgba(0, 0, 0, 0.04);
       border-left: 3px solid var(--color-primary);
-      padding: 3rem;
+      padding: 2.5rem;
       border-radius: var(--radius);
-      margin-top: 4rem;
-      max-width: 850px;
-      margin-inline: auto;
-      text-align: center;
+      margin-top: 3rem;
+      max-width: 100%;
+      text-align: left;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
       transition: transform 0.6s var(--ease-luxury), box-shadow 0.6s var(--ease-luxury);
     }
@@ -72,17 +88,15 @@
     }
 
     .about-hero-content .about-body {
-      max-width: 100%;
-      margin-inline: auto;
-      margin-top: 4rem;
+      margin-top: 0;
+      text-align: left;
     }
 
     .about-hero-content .about-body p {
       font-size: 1.1rem;
-      line-height: 2;
-      margin-bottom: 2.5rem;
-      max-width: 960px;
-      margin-inline: auto;
+      line-height: 1.9;
+      margin-bottom: 2rem;
+      max-width: 100%;
     }
 
     .visual-break-section {
@@ -277,13 +291,12 @@
     <!-- SECTION 1: HERO (ABOUT INTRO) -->
     <section class="about-hero-section" id="hero-about">
       <div class="container about-hero-content">
-        <div
-          style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem;">
-          <h1 class="about-h2 reveal delay-1" style="margin-bottom: 0;">
-            ABOUT <span class="accent">GALA &amp; CO</span>
+        <div class="about-hero-title-col reveal">
+          <h1 class="about-h2">
+            ABOUT<br /><span class="accent">GALA &amp; CO</span>
           </h1>
         </div>
-        <div class="about-body reveal delay-2">
+        <div class="about-body reveal delay-1">
           <p>
             Gala &amp; Co represents a structured approach to real estate and construction, where every decision is
             backed by insight and every project is executed with precision.
@@ -310,7 +323,7 @@
             By combining real estate expertise with on-ground execution, Gala &amp; Co offers a more cohesive approach
             ensuring that decisions are not only well-informed but also effectively implemented.
           </p>
-          <div class="premium-highlight-box reveal delay-3">
+          <div class="premium-highlight-box">
             <p style="font-weight: 500; font-size: 1.15rem; color: var(--color-fg); line-height: 1.9; margin: 0;">
               The Future Rises with Gala - a Philosophy Reflected in Every Project Undertaken, with a Consistent Focus on Building with Intent, Precision, and Long-term Value.
             </p>
