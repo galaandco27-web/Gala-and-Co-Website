@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="Nn16JpbYXZBHYuF7Z4n5JyGVKBVfDWSgGUAN2DKBYeE" />
+
+  <!-- Primary SEO -->
+  <title>Services | Gala & Co</title>
+  <meta name="description"
+    content="Comprehensive real estate and construction services by Gala & Co across Pune and Mumbai." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://galaandco.com/services" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Services | Gala & Co" />
+  <meta property="og:description"
+    content="Comprehensive real estate and construction services by Gala & Co across Pune and Mumbai." />
+  <meta property="og:url" content="https://galaandco.com/services" />
+  <meta property="og:image" content="https://galaandco.com/assets/images/hero-building.jpg" />
+
+  <link rel="preload" as="image" href="assets/images/project 1 a.jpg" fetchpriority="high" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+        /* Specific styles for Services page */
+    .services-hero-section {
+      padding-top: 14rem;
+      padding-bottom: 8rem;
+      background-color: var(--color-bg);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .services-hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      margin-inline: auto;
+      text-align: center;
+      padding-inline: var(--space-24);
+    }
+    
+    .services-h2 {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      font-family: var(--font-heading);
+      letter-spacing: -0.02em;
+    }
+    
+    .services-hero-body {
+      font-size: 1.15rem;
+      line-height: 2.1;
+      margin-bottom: 0;
+      color: var(--color-fg);
+    }
+
+    /* Stacked Services Layout */
+    .services-list-section {
+      padding-top: 4rem;
+      padding-bottom: 8rem;
+      background-color: var(--color-bg);
+    }
+    
+    .services-category-block {
+      max-width: 1000px;
+      margin-inline: auto;
+      padding-inline: var(--space-24);
+      margin-bottom: 6rem;
+    }
+    
+    .services-category-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .services-category-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 3rem;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-fg);
+    }
+
+    .service-item {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+      transition: all 0.5s var(--ease-luxury);
+      border-left: 3px solid transparent;
+      margin-inline: -1.5rem;
+      padding-inline: 1.5rem;
+    }
+    
+    .service-item:first-of-type {
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .service-item:hover {
+      background: rgba(0, 0, 0, 0.015);
+      border-left: 3px solid var(--color-primary);
+      transform: translateX(5px);
+    }
+
+    .service-title {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--color-fg);
+    }
+
+    .service-desc {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      line-height: 1.95;
+      color: rgba(17, 24, 39, 0.85);
+      max-width: 100%;
+      margin: 0;
+    }
+    
+    @media (min-width: 768px) {
+      .service-item {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 4rem;
+        align-items: flex-start;
+      }
+      .service-title {
+        margin-bottom: 0;
+        margin-top: -4px;
+      }
+    }
+
+    /* Fix header styles for subpage */
+    .site-header.transparent {
+      background-color: var(--color-bg) !important;
+      border-bottom: 1px solid var(--color-border) !important;
+    }
+    .site-header.transparent .logo,
+    .site-header.transparent .nav-desktop a,
+    .site-header.transparent .hamburger span {
+      color: var(--color-fg) !important;
+    }
+    .site-header.transparent .hamburger span {
+      background-color: var(--color-fg) !important;
+    }
+    .site-header.transparent .btn-request-visit {
+      color: var(--color-primary) !important;
+      border-color: var(--color-primary) !important;
+    }
+    .site-header.transparent .btn-request-visit:hover {
+      background-color: var(--color-primary) !important;
+      color: var(--color-primary-fg) !important;
+    }
+    .brand-logo-subpage {
+      height: clamp(54px, 5.5vw, 64px);
+      width: auto;
+      object-fit: contain;
+      display: block;
+      transform: scale(3);
+      transform-origin: left center;
+    }
+</style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header scrolled" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo header-logo visible" aria-label="Gala &amp; Co — Home" style="opacity: 1;">
+        <!-- Using custom class to prevent main.js from swapping the logo to white -->
+        <img src="assets/images/logo.png" alt="Gala &amp; Co Logo" class="brand-logo-subpage">
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary navigation">
+        <a href="/about.html">About</a>
+        <a href="/services.html" class="active">Services</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-request-visit open-visit-modal" aria-label="Open request a visit form">Request a
+          Visit</button>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="/about.html">About</a>
+    <a href="/services.html" class="active">Services</a>
+    <a href="/#projects">Projects</a>
+    <a href="/#contact">Contact</a>
+    <button class="btn-mobile-cta open-visit-modal" aria-label="Open request a visit form">Request a Visit</button>
+  </div>
+
+  <main id="main-content">
+
+    <!-- SECTION 1: HERO -->
+    <section class="services-hero-section">
+      <div class="container services-hero-content">
+        <h1 class="services-h2 reveal">OUR SERVICES</h1>
+        <p class="services-hero-body reveal delay-1">
+          At Gala &amp; Co, we offer a comprehensive range of services across real estate and construction, designed to support clients at every stage from investment decisions to on-ground execution.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SERVICES LIST -->
+    <section class="services-list-section">
+      <div class="container">
+        
+        <!-- REAL ESTATE CATEGORY -->
+        <div class="services-category-block">
+          <h2 class="services-category-title reveal">REAL ESTATE</h2>
+          
+          <div class="service-item reveal delay-1">
+            <h3 class="service-title">Primary Sales</h3>
+            <p class="service-desc">
+              We facilitate transactions in new residential and commercial developments working closely with both developers and clients. Our focus is on helping clients secure the right property at the right price, ensuring transparency, market alignment and a smooth end-to-end buying experience.
+            </p>
+          </div>
+          
+          <div class="service-item reveal delay-2">
+            <h3 class="service-title">Project Mandates</h3>
+            <p class="service-desc">
+              Gala &amp; Co partners with developers on exclusive project mandates, taking ownership of the sales process. Our role extends beyond transactions we support project positioning, marketing, buyer outreach and deal closure, helping developers streamline sales and improve overall efficiency.
+            </p>
+          </div>
+          
+          <div class="service-item reveal delay-3">
+            <h3 class="service-title">Commercial Leasing</h3>
+            <p class="service-desc">
+              We support clients in securing the right commercial spaces based on their operational and investment requirements. We also work with brands, corporates and MNCs to support their expansion by identifying and securing the right commercial spaces. Our approach focuses on location strategy, property selection and transaction support to ensure long-term value for business operations.
+            </p>
+          </div>
+          
+          <div class="service-item reveal delay-4">
+            <h3 class="service-title">Investment Advisory</h3>
+            <p class="service-desc">
+              We provide strategic real estate investment guidance to clients, including NRIs across the globe. With a strong understanding of the Pune and Mumbai markets, we help investors identify the right opportunities, ensuring informed decisions aligned with long-term growth and returns.
+            </p>
+          </div>
+        </div>
+
+        <!-- CONTRACTING CATEGORY -->
+        <div class="services-category-block" style="margin-top: 4rem;">
+          <h2 class="services-category-title reveal">CONTRACTING</h2>
+          
+          <div class="service-item reveal delay-1">
+            <h3 class="service-title">RCC Works</h3>
+            <p class="service-desc">
+              We specialize in RCC (Reinforced Cement Concrete) contracting for residential and commercial developments. Our scope also includes lock-and-key (turnkey) projects, ensuring seamless execution from structural work to project completion, with a strong focus on quality and timelines.
+            </p>
+          </div>
+          
+          <div class="service-item reveal delay-2">
+            <h3 class="service-title">Interior Fit-Outs</h3>
+            <p class="service-desc">
+              We undertake interior fit-out projects, delivering functional and well-executed spaces tailored to client requirements. Our work ensures smooth coordination across design, materials, and on-site execution.
+            </p>
+          </div>
+          
+          <div class="service-item reveal delay-3">
+            <h3 class="service-title">Infrastructure Development</h3>
+            <p class="service-desc">
+              Gala &amp; Co is involved in infrastructure-related projects, focusing on efficient planning, coordination, and execution while maintaining required quality and compliance standards.
+            </p>
+          </div>
+          
+          <div class="service-item reveal delay-4">
+            <h3 class="service-title">Project Management</h3>
+            <p class="service-desc">
+              We provide end-to-end project management services, overseeing planning, coordination, and execution. Our role is to ensure projects are delivered on time, within budget, and as per defined quality standards.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <img src="assets/images/White_Logo.png" alt="Gala &amp; Co Logo" class="brand-logo-img footer-logo-img">
+          <p class="footer-tagline">The Future rises with Gala.</p>
+        </div>
+
+        <div class="footer-col-nav">
+          <nav aria-label="Footer navigation">
+            <a href="/about.html">About</a>
+            <a href="/services.html">Services</a>
+            <a href="/#projects">Projects</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+          </nav>
+        </div>
+
+        <div class="footer-col-social">
+          <nav aria-label="Social media">
+            <a href="https://www.instagram.com/galaandco_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/in/maitri-k-gala-818368270/" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.facebook.com/people/Maitri-Gala/pfbid032Fag9Bw9cJ5nBzQH3PmGudGNUkjH5dsN3UxyiwtXo1rvR3pL4UCdbM5anXoiC4xDl/"
+              target="_blank" rel="noopener noreferrer">Facebook</a>
+          </nav>
+        </div>
+
+        <div class="footer-col-contact">
+          <address>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Phone</span>
+              <p class="footer-contact-value"><a href="tel:+919503696035">+91 95036 96035</a></p>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Email</span>
+              <p class="footer-contact-value"><a href="mailto:galaandco27@gmail.com">galaandco27@gmail.com</a></p>
+            </div>
+          </address>
+        </div>
+
+        <div class="footer-col-address">
+          <address>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Address</span>
+              <p class="footer-contact-value">NM Service Station, Opp GPO,<br />Sadhu Vaswani Chowk, Pune 411001</p>
+            </div>
+          </address>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================
+       VISIT MODAL
+       ====================================================== -->
+  <div class="visit-modal-overlay" id="visitModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+    aria-hidden="true">
+    <div class="visit-modal-box" id="visitModalBox">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+
+      <div class="modal-form-state" id="modalFormState">
+        <div class="modal-header">
+          <span class="modal-eyebrow">Get In Touch</span>
+          <h3 class="modal-title" id="modal-title">Request a Visit</h3>
+        </div>
+
+        <form class="modal-form" id="visitForm" novalidate autocomplete="off">
+          <div class="modal-form-group">
+            <label class="modal-label" for="modal-name">Your Name <span class="modal-required">*</span></label>
+            <input class="modal-input" type="text" id="modal-name" name="modal-name" placeholder="e.g. Rohan Mehta"
+              autocomplete="name" />
+            <span class="modal-error" id="modal-name-error" role="alert"></span>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="modal-email">Email Address <span class="modal-required">*</span></label>
+            <input class="modal-input" type="email" id="modal-email" name="modal-email"
+              placeholder="e.g. rohan@example.com" autocomplete="email" />
+            <span class="modal-error" id="modal-email-error" role="alert"></span>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="modal-phone">Phone Number <span class="modal-required">*</span></label>
+            <input class="modal-input" type="tel" id="modal-phone" name="modal-phone"
+              placeholder="10-digit mobile number" autocomplete="tel" maxlength="10" />
+            <span class="modal-error" id="modal-phone-error" role="alert"></span>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="modal-message">Message <span
+                class="modal-optional">(Optional)</span></label>
+            <textarea class="modal-input modal-textarea" id="modal-message" name="modal-message"
+              placeholder="Tell us about your vision..." rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="modal-submit-btn">Send Request</button>
+        </form>
+      </div>
+
+      <div class="modal-success-state" id="modalSuccessState" aria-live="polite">
+        <div class="modal-success-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="26" cy="26" r="24" />
+            <path d="M14 26l9 9 15-18" />
+          </svg>
+        </div>
+        <h3 class="modal-success-title">Thank you for reaching out.</h3>
+        <p class="modal-success-body">We will get back to you shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+
+  <a href="javascript:void(0)" class="mobile-sticky-cta open-visit-modal" aria-label="Request a Call Back">Request a
+    Call Back</a>
+</body>
+
+</html>
