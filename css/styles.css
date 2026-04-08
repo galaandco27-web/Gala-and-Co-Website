@@ -2637,8 +2637,50 @@ body.modal-open {
 }
 
 /* ============================================================
-   MOBILE STICKY CTA
+   GLOBAL STICKY CTAS
    ============================================================ */
+
+/* Desktop Sticky CTA (Right Edge Vertical) */
+.desktop-sticky-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  right: 1.5rem; /* Slight offset from right edge */
+  transform: translateY(-50%) rotate(180deg);
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 1.75rem 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  z-index: 100;
+  transition: all 0.4s var(--ease-luxury);
+  border-radius: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.desktop-sticky-cta:hover {
+  background-color: var(--color-primary);
+  color: var(--color-primary-fg);
+  transform: translateY(-50%) rotate(180deg) scale(1.03);
+  box-shadow: 0 10px 30px rgba(159, 94, 30, 0.15);
+}
+
+@media (max-width: 767px) {
+  .desktop-sticky-cta {
+    display: none;
+  }
+}
+
+/* Mobile Sticky CTA */
 .mobile-sticky-cta {
   display: none;
   /* Hidden on desktop */
