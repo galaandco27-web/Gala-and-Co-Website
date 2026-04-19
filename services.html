@@ -584,65 +584,6 @@
       </div>
     </section>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const track = document.getElementById('faqCarouselTrack');
-        if (!track) return;
-        
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        let autoScrollInterval;
-
-        function startAutoScroll() {
-          autoScrollInterval = setInterval(() => {
-            if (track.scrollWidth - track.clientWidth <= track.scrollLeft + 1) {
-              track.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-              track.scrollLeft += 1;
-            }
-          }, 35);
-        }
-
-        function stopAutoScroll() {
-          clearInterval(autoScrollInterval);
-        }
-
-        startAutoScroll();
-
-        track.addEventListener('mouseenter', stopAutoScroll);
-        track.addEventListener('mouseleave', () => {
-          if (!isDown) startAutoScroll();
-        });
-        track.addEventListener('touchstart', stopAutoScroll, {passive: true});
-        track.addEventListener('touchend', startAutoScroll, {passive: true});
-
-        track.addEventListener('mousedown', (e) => {
-          isDown = true;
-          track.classList.add('active');
-          startX = e.pageX - track.offsetLeft;
-          scrollLeft = track.scrollLeft;
-          stopAutoScroll();
-        });
-        track.addEventListener('mouseleave', () => {
-          isDown = false;
-          track.classList.remove('active');
-        });
-        track.addEventListener('mouseup', () => {
-          isDown = false;
-          track.classList.remove('active');
-          startAutoScroll();
-        });
-        track.addEventListener('mousemove', (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - track.offsetLeft;
-          const walk = (x - startX) * 2;
-          track.scrollLeft = scrollLeft - walk;
-        });
-      });
-    </script>
-
   <!-- ======================================================
        FOOTER
        ====================================================== -->
