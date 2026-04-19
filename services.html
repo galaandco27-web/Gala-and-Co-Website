@@ -49,7 +49,7 @@
     .services-hero-content {
       position: relative;
       z-index: 3;
-      max-width: 900px;
+      max-width: 1000px;
       margin-inline: auto;
       text-align: center;
       padding-inline: var(--space-24);
@@ -65,7 +65,7 @@
     
     .services-hero-body {
       font-size: 1.15rem;
-      line-height: 2.1;
+      line-height: 1.8;
       margin-bottom: 0;
       color: var(--color-fg);
     }
@@ -78,7 +78,7 @@
     }
     
     .services-category-block {
-      max-width: 1000px;
+      max-width: 1150px;
       margin-inline: auto;
       padding-inline: var(--space-24);
       margin-bottom: 6rem;
@@ -127,10 +127,18 @@
     .service-desc {
       font-family: var(--font-body);
       font-size: 1.1rem;
-      line-height: 1.95;
+      line-height: 1.8;
       color: rgba(17, 24, 39, 0.85);
       max-width: 100%;
       margin: 0;
+    }
+    
+    @media (min-width: 768px) {
+      .services-hero-body,
+      p.service-desc {
+        text-align: justify;
+        text-justify: inter-word;
+      }
     }
     
     @media (min-width: 768px) {
@@ -310,8 +318,8 @@
         <!-- WHY CHOOSE GALA & CO CATEGORY -->
         <div class="services-category-block" style="margin-top: 4rem;">
           <h2 class="services-category-title reveal">WHY CHOOSE GALA &amp; CO</h2>
-          <div class="reveal delay-1" style="max-width: 900px; margin: 0 auto; text-align: left; padding-inline: 1.5rem;">
-            <ul class="service-desc" style="list-style-type: disc; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1.15rem;">
+          <div class="reveal delay-1" style="max-width: 100%; margin: 0 auto; text-align: left; padding-inline: 1.5rem;">
+            <ul class="service-desc" style="list-style-type: disc; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1.15rem; text-align: left;">
               <li>Deep understanding of the Pune real estate market</li>
               <li>Strong relationships with top builders in Pune, developers, and contractors</li>
               <li>Proven expertise in construction planning, execution, and project management</li>
@@ -327,7 +335,7 @@
         <!-- REAL ESTATE MARKET IN PUNE CATEGORY -->
         <div class="services-category-block" style="margin-top: 4rem;">
           <h2 class="services-category-title reveal">REAL ESTATE MARKET IN PUNE</h2>
-          <div class="reveal delay-1" style="max-width: 900px; margin: 0 auto; text-align: left; padding-inline: 1.5rem;">
+          <div class="reveal delay-1" style="max-width: 100%; margin: 0 auto; text-align: left; padding-inline: 1.5rem;">
             <p class="service-desc" style="margin-bottom: 1.5rem;">
               A fast-growing real estate market develops through strong infrastructure projects, IT hubs, and the rising need for residential and commercial properties. Homebuyers and investors continue to show interest in Baner, Wakad, Hinjewadi, and Kharadi because these locations make for excellent transportation links and have great potential for future development.
             </p>
