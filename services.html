@@ -154,6 +154,63 @@
       }
     }
 
+    /* Why Choose Gala Grid Styles */
+    .why-choose-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding-top: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .why-choose-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+
+    .why-choose-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.4s var(--ease-luxury);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    
+    .why-choose-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      border-color: var(--color-primary);
+    }
+    
+    .why-choose-icon {
+       width: 26px;
+       height: 26px;
+       color: var(--color-primary);
+       flex-shrink: 0;
+    }
+
+    .why-choose-text {
+       font-family: var(--font-body);
+       font-size: 1.1rem;
+       line-height: 1.7;
+       color: rgba(17, 24, 39, 0.85);
+       margin: 0;
+       text-align: left;
+    }
+
     /* Fix header styles for subpage */
     .site-header.transparent {
       background-color: var(--color-bg) !important;
@@ -318,17 +375,64 @@
         <!-- WHY CHOOSE GALA & CO CATEGORY -->
         <div class="services-category-block" style="margin-top: 4rem;">
           <h2 class="services-category-title reveal">WHY CHOOSE GALA &amp; CO</h2>
-          <div class="reveal delay-1" style="max-width: 100%; margin: 0 auto; text-align: left; padding-inline: 1.5rem;">
-            <ul class="service-desc" style="list-style-type: disc; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1.15rem; text-align: left;">
-              <li>Deep understanding of the Pune real estate market</li>
-              <li>Strong relationships with top builders in Pune, developers, and contractors</li>
-              <li>Proven expertise in construction planning, execution, and project management</li>
-              <li>Experience in handling high-value and investment-led transactions</li>
-              <li>Dedicated support for NRI clients across global markets</li>
-              <li>Seamless integration of real estate advisory with on-ground construction execution</li>
-              <li>Capability to manage projects from land acquisition to final delivery</li>
-              <li>Focus on quality construction standards, regulatory compliance, and timely delivery</li>
-            </ul>
+          <div class="reveal delay-1" style="max-width: 100%; margin: 0 auto; padding-inline: 0.5rem;">
+            <div class="why-choose-grid">
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Deep understanding of the Pune real estate market</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Strong relationships with top builders in Pune, developers, and contractors</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Proven expertise in construction planning, execution, and project management</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Experience in handling high-value and investment-led transactions</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Dedicated support for NRI clients across global markets</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Seamless integration of real estate advisory with on-ground construction execution</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Capability to manage projects from land acquisition to final delivery</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Focus on quality construction standards, regulatory compliance, and timely delivery</p>
+              </div>
+            </div>
           </div>
         </div>
 
