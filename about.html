@@ -123,13 +123,19 @@
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      align-items: center; /* Center horizontally */
+      justify-content: flex-start;
     }
 
     .founder-img {
       width: 100%;
+      max-width: 280px; /* Medium portrait, not too large */
+      margin: 0 auto;
       aspect-ratio: 3/4;
       object-fit: cover;
-      border-radius: var(--radius);
+      object-position: top center;
+      border-radius: 12px; /* Soft corners */
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Subtle shadow */
     }
 
     .founder-cta {
@@ -331,7 +337,7 @@
       <div class="container">
         <div class="about-page-grid founder-row">
           <div class="founder-image-col reveal-left" style="max-width: 360px; margin-inline: auto; text-align: center; width: 100%;">
-            <img src="assets/images/lifestyle-interior.jpg" alt="Maitri K. Gala" class="founder-img" />
+            <img src="assets/images/maitri.png" alt="Maitri K. Gala" class="founder-img" />
             <a href="https://www.linkedin.com/in/maitri-k-gala-818368270/" target="_blank" rel="noopener noreferrer" class="founder-cta" aria-label="Connect with Maitri K. Gala on LinkedIn" style="justify-content: center;">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
