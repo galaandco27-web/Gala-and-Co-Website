@@ -240,6 +240,90 @@
       transform: scale(3);
       transform-origin: left center;
     }
+
+    /* FAQ Carousel Styles */
+    .faq-section {
+      padding-top: 4rem;
+      padding-bottom: 8rem;
+      background-color: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .faq-carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+      padding: 1rem 0 3rem 0;
+      position: relative;
+    }
+
+    .faq-carousel-track {
+      display: flex;
+      gap: 2rem;
+      padding-inline: max(1.5rem, calc((100vw - 1100px) / 2));
+      overflow-x: auto;
+      scroll-behavior: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+      cursor: grab;
+    }
+
+    .faq-carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .faq-carousel-track.active {
+      cursor: grabbing;
+    }
+
+    .faq-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      flex: 0 0 420px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.4s var(--ease-luxury), transform 0.4s var(--ease-luxury), border-color 0.4s var(--ease-luxury);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      white-space: normal;
+    }
+    
+    .faq-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      border-color: var(--color-primary);
+    }
+    
+    .faq-question {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 600;
+      margin: 0;
+      color: var(--color-fg);
+      line-height: 1.4;
+    }
+    
+    .faq-answer {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(17, 24, 39, 0.85);
+      margin: 0;
+      text-align: left;
+    }
+
+    @media (max-width: 1023px) {
+      .faq-card {
+        flex: 0 0 340px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .faq-card {
+        flex: 0 0 85vw;
+      }
+    }
 </style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -457,6 +541,107 @@
 
       </div>
     </section>
+
+    <!-- SECTION 3: FAQS -->
+    <section class="faq-section">
+      <div class="container limit-width">
+        <h2 class="services-category-title reveal" style="margin-bottom: 2rem;">FAQs</h2>
+      </div>
+      
+      <div class="faq-carousel-wrapper reveal delay-1">
+        <div class="faq-carousel-track" id="faqCarouselTrack">
+          <!-- CARD 1 -->
+          <div class="faq-card">
+            <h3 class="faq-question">1. Which is the best real estate company in Pune?</h3>
+            <p class="faq-answer">A real estate company in Pune achieves its best status through its ability to provide transparent services, its staff members who possess expert market knowledge and its complete client assistance framework. Gala &amp; Co provides a dependable solution to buyers, investors, and developers through its organized approach, complete process of business operations and due diligence work.</p>
+          </div>
+          <!-- CARD 2 -->
+          <div class="faq-card">
+            <h3 class="faq-question">2. What services do real estate companies in Pune offer?</h3>
+            <p class="faq-answer">Real estate agents in Pune provide property buying, selling and leasing services together with investment advisory and project marketing services. Gala &amp; Co provides additional services which include contracting work, project management and asset advisory services.</p>
+          </div>
+          <!-- CARD 3 -->
+          <div class="faq-card">
+            <h3 class="faq-question">3. How do I choose the right real estate broker in Pune?</h3>
+            <p class="faq-answer">The process of selecting an appropriate real estate consultant in Pune requires assessment of their expertise in market operations, their connections to property developers, their openness to clients and their capacity to manage complete property sales processes.</p>
+          </div>
+          <!-- CARD 4 -->
+          <div class="faq-card">
+            <h3 class="faq-question">4. Is Pune a good city for real estate investment?</h3>
+            <p class="faq-answer">Yes. With strong infrastructure, IT growth, and steady demand, Pune offers solid long-term investment potential.</p>
+          </div>
+          <!-- CARD 5 -->
+          <div class="faq-card">
+            <h3 class="faq-question">5. Do real estate companies in Pune help NRIs?</h3>
+            <p class="faq-answer">Yes. We offer dedicated support for NRI clients, ensuring smooth and transparent transactions.</p>
+          </div>
+          <!-- CARD 6 -->
+          <div class="faq-card">
+            <h3 class="faq-question">6. What are the top locations to invest in Pune real estate?</h3>
+            <p class="faq-answer">Popular investment locations in Pune include Baner, Wakad, Hinjewadi, Kharadi, and other rapidly developing areas with strong connectivity and infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('faqCarouselTrack');
+        if (!track) return;
+        
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let autoScrollInterval;
+
+        function startAutoScroll() {
+          autoScrollInterval = setInterval(() => {
+            if (track.scrollWidth - track.clientWidth <= track.scrollLeft + 1) {
+              track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              track.scrollLeft += 1;
+            }
+          }, 35);
+        }
+
+        function stopAutoScroll() {
+          clearInterval(autoScrollInterval);
+        }
+
+        startAutoScroll();
+
+        track.addEventListener('mouseenter', stopAutoScroll);
+        track.addEventListener('mouseleave', () => {
+          if (!isDown) startAutoScroll();
+        });
+        track.addEventListener('touchstart', stopAutoScroll, {passive: true});
+        track.addEventListener('touchend', startAutoScroll, {passive: true});
+
+        track.addEventListener('mousedown', (e) => {
+          isDown = true;
+          track.classList.add('active');
+          startX = e.pageX - track.offsetLeft;
+          scrollLeft = track.scrollLeft;
+          stopAutoScroll();
+        });
+        track.addEventListener('mouseleave', () => {
+          isDown = false;
+          track.classList.remove('active');
+        });
+        track.addEventListener('mouseup', () => {
+          isDown = false;
+          track.classList.remove('active');
+          startAutoScroll();
+        });
+        track.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - track.offsetLeft;
+          const walk = (x - startX) * 2;
+          track.scrollLeft = scrollLeft - walk;
+        });
+      });
+    </script>
 
   <!-- ======================================================
        FOOTER
