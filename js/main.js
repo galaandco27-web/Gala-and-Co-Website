@@ -735,7 +735,7 @@ function initFAQCarousel() {
       } else {
         track.scrollLeft += 1;
       }
-    }, 35);
+    }, 12);
   }
 
   function stopAutoScroll() {
