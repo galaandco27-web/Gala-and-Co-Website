@@ -716,6 +716,72 @@ function initSmoothScroll() {
 }
 
 /* ============================================================
+   FAQ CAROUSEL — Interactive drag and infinite scroll
+   ============================================================ */
+function initFAQCarousel() {
+  const track = document.getElementById('faqCarouselTrack');
+  if (!track) return;
+  
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  let autoScrollInterval;
+
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      // If we've reached the very end of the scroll track minus screen viewport width
+      if (track.scrollWidth - track.clientWidth <= track.scrollLeft + 1) {
+        track.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
+      } else {
+        track.scrollLeft += 1;
+      }
+    }, 12);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  // Engage auto-scrolling by default
+  startAutoScroll();
+
+  // Mouse interactivity (pause on hover)
+  track.addEventListener('mouseenter', stopAutoScroll);
+  track.addEventListener('mouseleave', () => {
+    if (!isDown) startAutoScroll();
+  });
+  
+  // Touch interactivity (pause on touch)
+  track.addEventListener('touchstart', stopAutoScroll, {passive: true});
+  track.addEventListener('touchend', startAutoScroll, {passive: true});
+
+  // Physical mouse Drag controls
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    track.classList.add('active');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+    stopAutoScroll();
+  });
+  track.addEventListener('mouseleave', () => {
+    isDown = false;
+    track.classList.remove('active');
+  });
+  track.addEventListener('mouseup', () => {
+    isDown = false;
+    track.classList.remove('active');
+    startAutoScroll(); // Resume auto-scrolling on release
+  });
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 2; // the multiplier creates 'fast' scroll tracking
+    track.scrollLeft = scrollLeft - walk;
+  });
+}
+
+/* ============================================================
    INIT
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -732,4 +798,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMouseParallax();
   initHeroScroll();
   initMagneticCTA();
+  initFAQCarousel();
 });

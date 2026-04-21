@@ -36,8 +36,8 @@
   <style>
         /* Specific styles for Services page */
     .services-hero-section {
-      padding-top: 14rem;
-      padding-bottom: 8rem;
+      padding-top: 10rem;
+      padding-bottom: 3rem;
       background-color: var(--color-bg);
       text-align: center;
       display: flex;
@@ -49,7 +49,7 @@
     .services-hero-content {
       position: relative;
       z-index: 3;
-      max-width: 900px;
+      max-width: 1000px;
       margin-inline: auto;
       text-align: center;
       padding-inline: var(--space-24);
@@ -65,7 +65,7 @@
     
     .services-hero-body {
       font-size: 1.15rem;
-      line-height: 2.1;
+      line-height: 1.8;
       margin-bottom: 0;
       color: var(--color-fg);
     }
@@ -78,7 +78,7 @@
     }
     
     .services-category-block {
-      max-width: 1000px;
+      max-width: 1150px;
       margin-inline: auto;
       padding-inline: var(--space-24);
       margin-bottom: 6rem;
@@ -127,10 +127,18 @@
     .service-desc {
       font-family: var(--font-body);
       font-size: 1.1rem;
-      line-height: 1.95;
+      line-height: 1.8;
       color: rgba(17, 24, 39, 0.85);
       max-width: 100%;
       margin: 0;
+    }
+    
+    @media (min-width: 768px) {
+      .services-hero-body,
+      p.service-desc {
+        text-align: justify;
+        text-justify: inter-word;
+      }
     }
     
     @media (min-width: 768px) {
@@ -144,6 +152,63 @@
         margin-bottom: 0;
         margin-top: -4px;
       }
+    }
+
+    /* Why Choose Gala Grid Styles */
+    .why-choose-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding-top: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .why-choose-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+
+    .why-choose-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.4s var(--ease-luxury);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    
+    .why-choose-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      border-color: var(--color-primary);
+    }
+    
+    .why-choose-icon {
+       width: 26px;
+       height: 26px;
+       color: var(--color-primary);
+       flex-shrink: 0;
+    }
+
+    .why-choose-text {
+       font-family: var(--font-body);
+       font-size: 1.1rem;
+       line-height: 1.7;
+       color: rgba(17, 24, 39, 0.85);
+       margin: 0;
+       text-align: left;
     }
 
     /* Fix header styles for subpage */
@@ -175,6 +240,8 @@
       transform: scale(3);
       transform-origin: left center;
     }
+
+
 </style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -230,7 +297,7 @@
       <div class="container services-hero-content">
         <h1 class="services-h2 reveal">OUR SERVICES</h1>
         <p class="services-hero-body reveal delay-1">
-          At Gala &amp; Co, we offer a comprehensive range of services across real estate and construction, designed to support clients at every stage from investment decisions to on-ground execution.
+          At Gala &amp; Co, services are designed to support clients across every stage of the real estate and construction lifecycle, making it a trusted choice among real estate agents in Pune and investors alike.
         </p>
       </div>
     </section>
@@ -241,70 +308,197 @@
         
         <!-- REAL ESTATE CATEGORY -->
         <div class="services-category-block">
-          <h2 class="services-category-title reveal">REAL ESTATE</h2>
+          <h2 class="services-category-title reveal">REAL ESTATE SERVICES</h2>
           
           <div class="service-item reveal delay-1">
-            <h3 class="service-title">Primary Sales</h3>
+            <h3 class="service-title">Primary Sales &amp; Exclusive Mandates</h3>
             <p class="service-desc">
-              We facilitate transactions in new residential and commercial developments working closely with both developers and clients. Our focus is on helping clients secure the right property at the right price, ensuring transparency, market alignment and a smooth end-to-end buying experience.
+              The company provides its clients with comprehensive real estate services which include their primary sales operations and exclusive mandate services. We work with top builders in Pune and developers to facilitate transactions which involve new residential and commercial developments.<br><br>
+              From project positioning to final deal closure, our approach ensures transparency, efficiency, and a seamless buying experience.
             </p>
           </div>
           
           <div class="service-item reveal delay-2">
-            <h3 class="service-title">Project Mandates</h3>
+            <h3 class="service-title">Commercial Leasing &amp; Advisory</h3>
             <p class="service-desc">
-              Gala &amp; Co partners with developers on exclusive project mandates, taking ownership of the sales process. Our role extends beyond transactions we support project positioning, marketing, buyer outreach and deal closure, helping developers streamline sales and improve overall efficiency.
+              The company helps business organizations, corporate entities, and brand names to find and acquire suitable commercial properties throughout Pune. Our approach focuses on location strategy, operational suitability, and long-term value, making us one of the most reliable builders in Pune for commercial real estate decisions.
             </p>
           </div>
           
           <div class="service-item reveal delay-3">
-            <h3 class="service-title">Commercial Leasing</h3>
+            <h3 class="service-title">Real Estate Investment Advisory</h3>
             <p class="service-desc">
-              We support clients in securing the right commercial spaces based on their operational and investment requirements. We also work with brands, corporates and MNCs to support their expansion by identifying and securing the right commercial spaces. Our approach focuses on location strategy, property selection and transaction support to ensure long-term value for business operations.
+              Our company assists investors through our comprehensive understanding of the Pune real estate market conditions which helps to find lucrative investment opportunities.<br><br>
+              Our investment advisory service uses data analysis together with market trend research and long-term growth evaluation to create investment strategies which help clients make informed business decisions.
             </p>
           </div>
           
           <div class="service-item reveal delay-4">
-            <h3 class="service-title">Investment Advisory</h3>
+            <h3 class="service-title">Asset Management &amp; Portfolio Services</h3>
             <p class="service-desc">
-              We provide strategic real estate investment guidance to clients, including NRIs across the globe. With a strong understanding of the Pune and Mumbai markets, we help investors identify the right opportunities, ensuring informed decisions aligned with long-term growth and returns.
+              The company helps clients achieve their investment goals through effective real estate asset management which maximizes returns and creates portfolio value. The process includes advisory services together with performance monitoring and market condition-based strategic recommendations.
             </p>
           </div>
         </div>
 
         <!-- CONTRACTING CATEGORY -->
         <div class="services-category-block" style="margin-top: 4rem;">
-          <h2 class="services-category-title reveal">CONTRACTING</h2>
+          <h2 class="services-category-title reveal">CONTRACTING SERVICES</h2>
           
           <div class="service-item reveal delay-1">
-            <h3 class="service-title">RCC Works</h3>
+            <h3 class="service-title">RCC Works (Reinforced Cement Concrete)</h3>
             <p class="service-desc">
-              We specialize in RCC (Reinforced Cement Concrete) contracting for residential and commercial developments. Our scope also includes lock-and-key (turnkey) projects, ensuring seamless execution from structural work to project completion, with a strong focus on quality and timelines.
+              Our company provides RCC contracting services for residential and commercial construction projects which include turnkey (lock-and-key) projects. Our execution processes maintain both structural integrity and quality standards while delivering results on scheduled timeframes.
             </p>
           </div>
           
           <div class="service-item reveal delay-2">
             <h3 class="service-title">Interior Fit-Outs</h3>
             <p class="service-desc">
-              We undertake interior fit-out projects, delivering functional and well-executed spaces tailored to client requirements. Our work ensures smooth coordination across design, materials, and on-site execution.
+              We create functional interior spaces which we construct through coordination between design elements, materials and on-site work. Each project is tailored to meet client requirements with precision.
             </p>
           </div>
           
           <div class="service-item reveal delay-3">
             <h3 class="service-title">Infrastructure Development</h3>
             <p class="service-desc">
-              Gala &amp; Co is involved in infrastructure-related projects, focusing on efficient planning, coordination, and execution while maintaining required quality and compliance standards.
+              Our organization handles infrastructure projects through the three stages of planning, coordination and execution. We actively participate in government tenders, ensuring full compliance with regulatory requirements and project specifications.
             </p>
           </div>
           
           <div class="service-item reveal delay-4">
             <h3 class="service-title">Project Management</h3>
             <p class="service-desc">
-              We provide end-to-end project management services, overseeing planning, coordination, and execution. Our role is to ensure projects are delivered on time, within budget, and as per defined quality standards.
+              Our company offers complete project management solutions which we use to control all project phases from the initial planning stage to the final execution phase. Our team manages project delivery according to established timelines and budget limits while meeting all specified quality standards.
             </p>
           </div>
         </div>
 
+        <!-- WHY CHOOSE GALA & CO CATEGORY -->
+        <div class="services-category-block" style="margin-top: 4rem;">
+          <h2 class="services-category-title reveal">WHY CHOOSE GALA &amp; CO</h2>
+          <div class="reveal delay-1" style="max-width: 100%; margin: 0 auto; padding-inline: 0.5rem;">
+            <div class="why-choose-grid">
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Deep understanding of the Pune real estate market</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Strong relationships with top builders in Pune, developers, and contractors</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Proven expertise in construction planning, execution, and project management</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Experience in handling high-value and investment-led transactions</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Dedicated support for NRI clients across global markets</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Seamless integration of real estate advisory with on-ground construction execution</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Capability to manage projects from land acquisition to final delivery</p>
+              </div>
+
+              <div class="why-choose-card">
+                <svg class="why-choose-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="why-choose-text">Focus on quality construction standards, regulatory compliance, and timely delivery</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- REAL ESTATE MARKET IN PUNE CATEGORY -->
+        <div class="services-category-block" style="margin-top: 4rem;">
+          <h2 class="services-category-title reveal">REAL ESTATE MARKET IN PUNE</h2>
+          <div class="reveal delay-1" style="max-width: 100%; margin: 0 auto; text-align: left; padding-inline: 1.5rem;">
+            <p class="service-desc" style="margin-bottom: 1.5rem;">
+              A fast-growing real estate market develops through strong infrastructure projects, IT hubs, and the rising need for residential and commercial properties. Homebuyers and investors continue to show interest in Baner, Wakad, Hinjewadi, and Kharadi because these locations make for excellent transportation links and have great potential for future development.
+            </p>
+            <p class="service-desc" style="margin-bottom: 1.5rem;">
+              Pune's real estate market offers high growth potential because the top builders in Pune operate there, and working professionals and businesses maintain steady property demand. Property investors consider Pune to be their ideal location for making long-term investments.
+            </p>
+            <p class="service-desc" style="margin-bottom: 1.5rem;">
+              Gala &amp; Co operates at the intersection of this growth, helping clients navigate opportunities across residential, commercial, and investment segments.
+            </p>
+            <p class="service-desc">
+              The firm uses its structured approach to deep market knowledge for making decisions that follow current trends while preparing for future needs.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: FAQS -->
+    <section class="faq-section">
+      <div class="container limit-width">
+        <h2 class="services-category-title reveal" style="margin-bottom: 2rem;">FAQs</h2>
+      </div>
+      
+      <div class="faq-carousel-wrapper reveal delay-1">
+        <div class="faq-carousel-track" id="faqCarouselTrack">
+          <!-- CARD 1 -->
+          <div class="faq-card">
+            <h3 class="faq-question">1. Which is the best real estate company in Pune?</h3>
+            <p class="faq-answer">A real estate company in Pune achieves its best status through its ability to provide transparent services, its staff members who possess expert market knowledge and its complete client assistance framework. Gala &amp; Co provides a dependable solution to buyers, investors, and developers through its organized approach, complete process of business operations and due diligence work.</p>
+          </div>
+          <!-- CARD 2 -->
+          <div class="faq-card">
+            <h3 class="faq-question">2. What services do real estate companies in Pune offer?</h3>
+            <p class="faq-answer">Real estate agents in Pune provide property buying, selling and leasing services together with investment advisory and project marketing services. Gala &amp; Co provides additional services which include contracting work, project management and asset advisory services.</p>
+          </div>
+          <!-- CARD 3 -->
+          <div class="faq-card">
+            <h3 class="faq-question">3. How do I choose the right real estate broker in Pune?</h3>
+            <p class="faq-answer">The process of selecting an appropriate real estate consultant in Pune requires assessment of their expertise in market operations, their connections to property developers, their openness to clients and their capacity to manage complete property sales processes.</p>
+          </div>
+          <!-- CARD 4 -->
+          <div class="faq-card">
+            <h3 class="faq-question">4. Is Pune a good city for real estate investment?</h3>
+            <p class="faq-answer">Yes. With strong infrastructure, IT growth, and steady demand, Pune offers solid long-term investment potential.</p>
+          </div>
+          <!-- CARD 5 -->
+          <div class="faq-card">
+            <h3 class="faq-question">5. Do real estate companies in Pune help NRIs?</h3>
+            <p class="faq-answer">Yes. We offer dedicated support for NRI clients, ensuring smooth and transparent transactions.</p>
+          </div>
+          <!-- CARD 6 -->
+          <div class="faq-card">
+            <h3 class="faq-question">6. What are the top locations to invest in Pune real estate?</h3>
+            <p class="faq-answer">Popular investment locations in Pune include Baner, Wakad, Hinjewadi, Kharadi, and other rapidly developing areas with strong connectivity and infrastructure.</p>
+          </div>
+        </div>
       </div>
     </section>
 
