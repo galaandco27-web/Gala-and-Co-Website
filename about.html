@@ -287,7 +287,7 @@
       <nav class="nav-desktop" aria-label="Primary navigation">
         <a href="/about.html" class="active">About</a>
         <a href="/services.html">Services</a>
-        <a href="/#projects">Projects</a>
+        <a href="javascript:void(0)" class="open-projects-modal">Projects</a>
         <a href="/#contact">Contact</a>
       </nav>
 
@@ -305,7 +305,7 @@
   <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
     <a href="/about.html" class="active">About</a>
     <a href="/services.html">Services</a>
-    <a href="/#projects">Projects</a>
+    <a href="javascript:void(0)" class="open-projects-modal">Projects</a>
     <a href="/#contact">Contact</a>
     <button class="btn-mobile-cta open-visit-modal" aria-label="Open request a visit form">Request a Visit</button>
   </div>
@@ -486,7 +486,7 @@
           <nav aria-label="Footer navigation">
             <a href="/about.html">About</a>
             <a href="/services.html">Services</a>
-            <a href="/#projects">Projects</a>
+            <a href="javascript:void(0)" class="open-projects-modal">Projects</a>
             <a href="/privacy-policy">Privacy Policy</a>
           </nav>
         </div>
@@ -525,6 +525,48 @@
       </div>
     </div>
   </footer>
+
+  <!-- ======================================================
+       PROJECTS MODAL
+       ====================================================== -->
+  <div class="projects-modal-overlay" id="projectsModalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="modal-close-btn projects-modal-close-btn" id="projectsModalCloseBtn" aria-label="Close modal">&times;</button>
+    <div class="projects-modal-box">
+      <section class="projects-section" id="projects" aria-labelledby="projects-heading">
+        <div class="projects-gallery-header" style="text-align: center;">
+          <span class="section-eyebrow">Signature Projects</span>
+          <h2 class="projects-h2" id="projects-heading">
+            <span class="accent">Ongoing Projects</span>
+          </h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-box" role="region" aria-label="Project 1 Image Slider">
+            <div class="project-slider" id="project-slider-1">
+              <img src="assets/images/project 1 a.jpg" alt="Signature Project Architectural Detail" class="slider-img is-active" />
+              <img src="assets/images/project 1 b.jpg" alt="Signature Project Interior Design" class="slider-img" loading="lazy" />
+              <img src="assets/images/project 1 c.jpg" alt="Signature Project Facade" class="slider-img" loading="lazy" />
+              <img src="assets/images/project 1 d.jpg" alt="Signature Project Premium Living" class="slider-img" loading="lazy" />
+              <img src="assets/images/project 1 e.jpg" alt="Signature Project Luxury Space" class="slider-img" loading="lazy" />
+              <img src="assets/images/project 1 f.jpg" alt="Signature Project Urban Context" class="slider-img" loading="lazy" />
+              <img src="assets/images/project 1 g.jpg" alt="Signature Project Sunset View" class="slider-img" loading="lazy" />
+              <img src="assets/images/project 1 h.jpg" alt="Signature Project Evening Perspective" class="slider-img" loading="lazy" />
+              <div class="slider-controls">
+                <button class="slider-btn prev-btn" aria-label="Previous image">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button class="slider-btn next-btn" aria-label="Next image">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="project-box" role="region" aria-label="Project 2 Overview">
+            <img src="assets/images/Project 2.jpeg" alt="Signature Project Master Development" class="project-box-img" loading="lazy" />
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
 
   <!-- ======================================================
        VISIT MODAL

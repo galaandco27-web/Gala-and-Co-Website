@@ -2161,6 +2161,94 @@ address {
 }
 
 /* ============================================================
+   PROJECTS MODAL (FULL SCREEN)
+   ============================================================ */
+.projects-modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg); /* Soft neutral background */
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.5s var(--ease-luxury), visibility 0.5s var(--ease-luxury);
+}
+
+.projects-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.projects-modal-box {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  transform: translateY(20px);
+  transition: transform 0.6s var(--ease-luxury);
+}
+
+.projects-modal-overlay.is-open .projects-modal-box {
+  transform: translateY(0);
+}
+
+.projects-modal-close-btn {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--color-fg);
+  cursor: pointer;
+  z-index: 10001;
+  transition: all 0.3s var(--ease-luxury);
+  padding: 0;
+  line-height: 1;
+}
+
+.projects-modal-close-btn:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+  border-color: var(--color-fg);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+  .projects-modal-close-btn {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+  }
+  .projects-modal-box {
+    padding: 4rem 1rem 2rem; /* Give room for closebtn */
+  }
+}
+
+/* Ensure the existing projects-section fills appropriately in its new home */
+.projects-modal-box .projects-section {
+  padding-top: 0;
+  padding-bottom: 0;
+  background: transparent;
+}
+
+/* ============================================================
    VISIT MODAL — Light Gradient, Rich Luxury Design
    ============================================================ */
 
