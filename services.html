@@ -122,6 +122,7 @@
       font-size: 1.75rem;
       margin-bottom: 1rem;
       color: var(--color-fg);
+      color: var(--color-primary); /* Use deep red for titles to add accent */
     }
 
     .service-desc {
@@ -140,17 +141,53 @@
         text-justify: inter-word;
       }
     }
+
+    /* Premium Grid Layout for Categories */
+    .services-grid-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .services-grid-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .services-grid-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-luxury);
+    }
     
-    @media (min-width: 768px) {
-      .service-item {
+    .services-grid-image:hover img {
+      transform: scale(1.03);
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid-layout {
         display: grid;
-        grid-template-columns: 280px 1fr;
-        gap: 4rem;
-        align-items: flex-start;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: start;
       }
-      .service-title {
-        margin-bottom: 0;
-        margin-top: -4px;
+      
+      .services-grid-layout.reverse {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .services-grid-layout.reverse .services-grid-image {
+        order: 2;
+      }
+
+      .services-grid-image {
+        position: sticky;
+        top: 120px;
+        height: calc(100vh - 240px);
+        max-height: 700px;
       }
     }
 
@@ -310,67 +347,83 @@
         <div class="services-category-block">
           <h2 class="services-category-title reveal">REAL ESTATE SERVICES</h2>
           
-          <div class="service-item reveal delay-1">
-            <h3 class="service-title">Primary Sales &amp; Exclusive Mandates</h3>
-            <p class="service-desc">
-              The company provides its clients with comprehensive real estate services which include their primary sales operations and exclusive mandate services. We work with top builders in Pune and developers to facilitate transactions which involve new residential and commercial developments.<br><br>
-              From project positioning to final deal closure, our approach ensures transparency, efficiency, and a seamless buying experience.
-            </p>
-          </div>
-          
-          <div class="service-item reveal delay-2">
-            <h3 class="service-title">Commercial Leasing &amp; Advisory</h3>
-            <p class="service-desc">
-              The company helps business organizations, corporate entities, and brand names to find and acquire suitable commercial properties throughout Pune. Our approach focuses on location strategy, operational suitability, and long-term value, making us one of the most reliable builders in Pune for commercial real estate decisions.
-            </p>
-          </div>
-          
-          <div class="service-item reveal delay-3">
-            <h3 class="service-title">Real Estate Investment Advisory</h3>
-            <p class="service-desc">
-              Our company assists investors through our comprehensive understanding of the Pune real estate market conditions which helps to find lucrative investment opportunities.<br><br>
-              Our investment advisory service uses data analysis together with market trend research and long-term growth evaluation to create investment strategies which help clients make informed business decisions.
-            </p>
-          </div>
-          
-          <div class="service-item reveal delay-4">
-            <h3 class="service-title">Asset Management &amp; Portfolio Services</h3>
-            <p class="service-desc">
-              The company helps clients achieve their investment goals through effective real estate asset management which maximizes returns and creates portfolio value. The process includes advisory services together with performance monitoring and market condition-based strategic recommendations.
-            </p>
+          <div class="services-grid-layout">
+            <div class="services-grid-image reveal-left delay-1">
+              <img src="assets/images/services-realestate.png" alt="Real Estate Services" />
+            </div>
+            
+            <div class="services-grid-content">
+              <div class="service-item reveal delay-2">
+                <h3 class="service-title">Primary Sales &amp; Exclusive Mandates</h3>
+                <p class="service-desc">
+                  The company provides its clients with comprehensive real estate services which include their primary sales operations and exclusive mandate services. We work with top builders in Pune and developers to facilitate transactions which involve new residential and commercial developments.<br><br>
+                  From project positioning to final deal closure, our approach ensures transparency, efficiency, and a seamless buying experience.
+                </p>
+              </div>
+              
+              <div class="service-item reveal delay-3">
+                <h3 class="service-title">Commercial Leasing &amp; Advisory</h3>
+                <p class="service-desc">
+                  The company helps business organizations, corporate entities, and brand names to find and acquire suitable commercial properties throughout Pune. Our approach focuses on location strategy, operational suitability, and long-term value, making us one of the most reliable builders in Pune for commercial real estate decisions.
+                </p>
+              </div>
+              
+              <div class="service-item reveal delay-4">
+                <h3 class="service-title">Real Estate Investment Advisory</h3>
+                <p class="service-desc">
+                  Our company assists investors through our comprehensive understanding of the Pune real estate market conditions which helps to find lucrative investment opportunities.<br><br>
+                  Our investment advisory service uses data analysis together with market trend research and long-term growth evaluation to create investment strategies which help clients make informed business decisions.
+                </p>
+              </div>
+              
+              <div class="service-item reveal delay-5">
+                <h3 class="service-title">Asset Management &amp; Portfolio Services</h3>
+                <p class="service-desc">
+                  The company helps clients achieve their investment goals through effective real estate asset management which maximizes returns and creates portfolio value. The process includes advisory services together with performance monitoring and market condition-based strategic recommendations.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- CONTRACTING CATEGORY -->
-        <div class="services-category-block" style="margin-top: 4rem;">
+        <div class="services-category-block" style="margin-top: 6rem;">
           <h2 class="services-category-title reveal">CONTRACTING SERVICES</h2>
           
-          <div class="service-item reveal delay-1">
-            <h3 class="service-title">RCC Works (Reinforced Cement Concrete)</h3>
-            <p class="service-desc">
-              Our company provides RCC contracting services for residential and commercial construction projects which include turnkey (lock-and-key) projects. Our execution processes maintain both structural integrity and quality standards while delivering results on scheduled timeframes.
-            </p>
-          </div>
-          
-          <div class="service-item reveal delay-2">
-            <h3 class="service-title">Interior Fit-Outs</h3>
-            <p class="service-desc">
-              We create functional interior spaces which we construct through coordination between design elements, materials and on-site work. Each project is tailored to meet client requirements with precision.
-            </p>
-          </div>
-          
-          <div class="service-item reveal delay-3">
-            <h3 class="service-title">Infrastructure Development</h3>
-            <p class="service-desc">
-              Our organization handles infrastructure projects through the three stages of planning, coordination and execution. We actively participate in government tenders, ensuring full compliance with regulatory requirements and project specifications.
-            </p>
-          </div>
-          
-          <div class="service-item reveal delay-4">
-            <h3 class="service-title">Project Management</h3>
-            <p class="service-desc">
-              Our company offers complete project management solutions which we use to control all project phases from the initial planning stage to the final execution phase. Our team manages project delivery according to established timelines and budget limits while meeting all specified quality standards.
-            </p>
+          <div class="services-grid-layout reverse">
+            <div class="services-grid-image reveal-right delay-1">
+              <img src="assets/images/services-contracting.png" alt="Contracting Services &amp; RCC Works" />
+            </div>
+
+            <div class="services-grid-content">
+              <div class="service-item reveal delay-2">
+                <h3 class="service-title">RCC Works (Reinforced Cement Concrete)</h3>
+                <p class="service-desc">
+                  Our company provides RCC contracting services for residential and commercial construction projects which include turnkey (lock-and-key) projects. Our execution processes maintain both structural integrity and quality standards while delivering results on scheduled timeframes.
+                </p>
+              </div>
+              
+              <div class="service-item reveal delay-3">
+                <h3 class="service-title">Interior Fit-Outs</h3>
+                <p class="service-desc">
+                  We create functional interior spaces which we construct through coordination between design elements, materials and on-site work. Each project is tailored to meet client requirements with precision.
+                </p>
+              </div>
+              
+              <div class="service-item reveal delay-4">
+                <h3 class="service-title">Infrastructure Development</h3>
+                <p class="service-desc">
+                  Our organization handles infrastructure projects through the three stages of planning, coordination and execution. We actively participate in government tenders, ensuring full compliance with regulatory requirements and project specifications.
+                </p>
+              </div>
+              
+              <div class="service-item reveal delay-5">
+                <h3 class="service-title">Project Management</h3>
+                <p class="service-desc">
+                  Our company offers complete project management solutions which we use to control all project phases from the initial planning stage to the final execution phase. Our team manages project delivery according to established timelines and budget limits while meeting all specified quality standards.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
