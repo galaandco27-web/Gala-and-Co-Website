@@ -730,10 +730,10 @@ function initFAQCarousel() {
   function startAutoScroll() {
     autoScrollInterval = setInterval(() => {
       // If we've reached the very end of the scroll track minus screen viewport width
-      if (track.scrollWidth - track.clientWidth <= track.scrollLeft + 1) {
+      if (track.scrollWidth - track.clientWidth <= track.scrollLeft + 2) {
         track.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
       } else {
-        track.scrollLeft += 1;
+        track.scrollLeft += 2;
       }
     }, 12);
   }
