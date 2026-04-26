@@ -2248,6 +2248,12 @@ address {
   background: transparent;
 }
 
+/* Ensure the heading is visible immediately, bypassing scroll reveal mechanics */
+.projects-modal-box .projects-gallery-header {
+  opacity: 1;
+  transform: none;
+}
+
 /* ============================================================
    VISIT MODAL — Light Gradient, Rich Luxury Design
    ============================================================ */
