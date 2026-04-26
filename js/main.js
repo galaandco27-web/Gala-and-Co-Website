@@ -398,73 +398,75 @@ function initServiceMicroScroll() {
  * Handles fading between images with auto-play and manual controls
  */
 function initProjectSlider() {
-  const slider = document.getElementById('project-slider-1');
-  if (!slider) return;
+  const sliders = document.querySelectorAll('.project-slider');
+  if (!sliders.length) return;
 
-  const images = slider.querySelectorAll('.slider-img');
-  const prevBtn = slider.querySelector('.prev-btn');
-  const nextBtn = slider.querySelector('.next-btn');
+  sliders.forEach(slider => {
+    const images = slider.querySelectorAll('.slider-img');
+    const prevBtn = slider.querySelector('.prev-btn');
+    const nextBtn = slider.querySelector('.next-btn');
 
-  if (!images.length) return;
+    if (!images.length) return;
 
-  let currentIndex = 0;
-  let autoPlayInterval;
-  const SLIDE_DURATION = 4000; // 4 seconds per image
+    let currentIndex = 0;
+    let autoPlayInterval;
+    const SLIDE_DURATION = 4000; // 4 seconds per image
 
-  const showImage = (index) => {
-    images.forEach(img => img.classList.remove('is-active'));
-    images[index].classList.add('is-active');
-  };
+    const showImage = (index) => {
+      images.forEach(img => img.classList.remove('is-active'));
+      images[index].classList.add('is-active');
+    };
 
-  const nextSlide = () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  };
+    const nextSlide = () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    };
 
-  const prevSlide = () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  };
+    const prevSlide = () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    };
 
-  const resetAutoPlay = () => {
-    clearInterval(autoPlayInterval);
+    const resetAutoPlay = () => {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(nextSlide, SLIDE_DURATION);
+    };
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        nextSlide();
+        resetAutoPlay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        prevSlide();
+        resetAutoPlay();
+      });
+    }
+
+    // Preload next images
+    const preloadImages = () => {
+      images.forEach(img => {
+        if (!img.complete && img.loading === 'lazy') {
+          img.loading = 'eager'; // Force load others once slider begins
+        }
+      });
+    };
+
+    // Start auto-play
     autoPlayInterval = setInterval(nextSlide, SLIDE_DURATION);
-  };
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      nextSlide();
-      resetAutoPlay();
-    });
-  }
+    // Pause on hover for better UX
+    slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    slider.addEventListener('mouseleave', () => resetAutoPlay());
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      prevSlide();
-      resetAutoPlay();
-    });
-  }
-
-  // Preload next images
-  const preloadImages = () => {
-    images.forEach(img => {
-      if (!img.complete && img.loading === 'lazy') {
-        img.loading = 'eager'; // Force load others once slider begins
-      }
-    });
-  };
-
-  // Start auto-play
-  autoPlayInterval = setInterval(nextSlide, SLIDE_DURATION);
-
-  // Pause on hover for better UX
-  slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-  slider.addEventListener('mouseleave', () => resetAutoPlay());
-
-  // Trigger preload after UI settles
-  setTimeout(preloadImages, 1000);
+    // Trigger preload after UI settles
+    setTimeout(preloadImages, 1000);
+  });
 }
 
 
