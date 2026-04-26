@@ -2646,7 +2646,7 @@ body.modal-open {
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 50%;
+  top: 30%;
   right: 0.5rem; /* Slight gap from edge */
   transform: translateY(-50%) rotate(180deg);
   background-color: var(--color-primary); /* Deep red */
