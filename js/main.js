@@ -782,6 +782,46 @@ function initFAQCarousel() {
 }
 
 /* ============================================================
+   PROJECTS MODAL — Overlay
+   ============================================================ */
+function initProjectsModal() {
+  const overlay = document.getElementById('projectsModalOverlay');
+  const closeBtn = document.getElementById('projectsModalCloseBtn');
+  if (!overlay) return;
+
+  function openProjectsModal() {
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProjectsModal() {
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.open-projects-modal').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      openProjectsModal();
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeProjectsModal);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeProjectsModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+      closeProjectsModal();
+    }
+  });
+}
+
+/* ============================================================
    INIT
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -792,6 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initServices();
   initServiceMicroScroll();
   initProjectSlider();
+  initProjectsModal();
   initVisitModal();
   initSmoothScroll();
   initCinematicLoad();
