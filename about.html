@@ -38,7 +38,7 @@
     .intro-seo-section {
       padding-top: 10rem;
       padding-bottom: var(--space-64);
-      background-color: var(--color-bg);
+      background: linear-gradient(180deg, #ffffff 0%, var(--color-bg) 100%);
     }
 
     .intro-seo-container {
@@ -75,7 +75,7 @@
     .about-hero-section {
       padding-top: 4rem;
       padding-bottom: var(--space-80);
-      background-color: var(--color-bg);
+      background: linear-gradient(180deg, var(--color-bg) 0%, rgba(119, 3, 5, 0.02) 100%);
       overflow: hidden;
     }
 
@@ -256,6 +256,11 @@
         text-align: justify;
         text-justify: inter-word;
       }
+    }
+
+    /* Override about section from generic styles to have a soft beige gradient */
+    .about-section {
+      background: linear-gradient(180deg, rgba(119, 3, 5, 0.02) 0%, rgba(225, 215, 205, 0.25) 100%) !important;
     }
   </style>
 
