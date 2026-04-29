@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('post-hero-image').alt = post.heroImageAltText;
 
     // Render Rich Text Body
-    if (post.content && window.richTextHtmlRenderer) {
-      const htmlContent = window.richTextHtmlRenderer.documentToHtmlString(post.content);
+    if (post.content && window.contentfulRichTextHtmlRenderer) {
+      const htmlContent = window.contentfulRichTextHtmlRenderer.documentToHtmlString(post.content);
       document.getElementById('post-body-content').innerHTML = htmlContent;
     } else {
       document.getElementById('post-body-content').innerHTML = '<p>Content unavailable.</p>';
