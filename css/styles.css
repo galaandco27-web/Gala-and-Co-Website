@@ -47,9 +47,9 @@
   --font-body: 'Outfit', system-ui, sans-serif;
 
   /* Spacing */
-  --max-width: 1280px;
+  --max-width: min(94vw, 2560px);
   --px-mobile: var(--space-24);
-  --px-desktop: var(--space-24);
+  --px-desktop: clamp(2.5rem, 5vw, 8rem);
 
   /* Transitions */
   --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1138,9 +1138,9 @@ h6 {
 
 .projects-gallery-header {
   width: 100%;
-  max-width: var(--container-max, 1280px);
+  max-width: var(--max-width);
   margin-inline: auto;
-  padding-inline: var(--space-24);
+  padding-inline: var(--px-mobile);
   padding-bottom: var(--space-48);
   /* Premium reveal animation */
   opacity: 0;
@@ -1172,9 +1172,9 @@ h6 {
   grid-template-columns: 1fr;
   gap: var(--space-32);
   width: 100%;
-  max-width: var(--container-max, 1280px);
+  max-width: var(--max-width);
   margin-inline: auto;
-  padding-inline: var(--space-24);
+  padding-inline: var(--px-mobile);
 }
 
 @media (min-width: 1024px) {
@@ -1843,7 +1843,11 @@ address {
 
 /* Tablet: 768px+ */
 @media (min-width: 768px) {
-  .container {
+  .container,
+  .projects-gallery-header,
+  .projects-grid,
+  .cta-block-section,
+  .legal-container {
     padding-inline: var(--px-desktop);
   }
 
