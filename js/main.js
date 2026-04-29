@@ -724,24 +724,76 @@ function initFAQCarousel() {
   const track = document.getElementById('faqCarouselTrack');
   if (!track) return;
   
+  // Clone cards to create a true seamless infinite loop effect
+  const originalCards = Array.from(track.children);
+  const originalCount = originalCards.length;
+  
+  originalCards.forEach(card => {
+    const clone = card.cloneNode(true);
+    // Hide clones from screen readers to prevent duplicate content
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+  
   let isDown = false;
   let startX;
-  let scrollLeft;
-  let autoScrollInterval;
+  let scrollLeftState;
+  let rafId;
+  let scrollPos = 0;
+  let lastTime = null;
+  const pixelsPerSecond = 50; // Smooth frame-independent speed
+  
+  // Sync initial scroll position
+  track.scrollLeft = 0;
+
+  // Calculate exact pixel distance of one full loop
+  function getLoopDistance() {
+    if (track.children.length <= originalCount) return 0;
+    // Distance from start of first card to start of its first clone
+    return track.children[originalCount].offsetLeft - track.children[0].offsetLeft;
+  }
+
+  function autoScroll(timestamp) {
+    if (!lastTime) lastTime = timestamp;
+    const dt = timestamp - lastTime;
+    lastTime = timestamp;
+
+    const loopDistance = getLoopDistance();
+    if (!loopDistance || dt > 100) { // Skip large jumps if tab was inactive
+      rafId = requestAnimationFrame(autoScroll);
+      return;
+    }
+
+    scrollPos += (pixelsPerSecond * dt) / 1000;
+
+    // Override with manual scroll if user dragged (allows native sync)
+    if (Math.abs(scrollPos - track.scrollLeft) > 5) {
+      scrollPos = track.scrollLeft;
+    }
+
+    // Seamless loop wrap-around
+    if (scrollPos >= loopDistance) {
+      scrollPos -= loopDistance;
+    } else if (scrollPos < 0) {
+      scrollPos += loopDistance;
+    }
+    
+    track.scrollLeft = scrollPos;
+    rafId = requestAnimationFrame(autoScroll);
+  }
 
   function startAutoScroll() {
-    autoScrollInterval = setInterval(() => {
-      // If we've reached the very end of the scroll track minus screen viewport width
-      if (track.scrollWidth - track.clientWidth <= track.scrollLeft + 2) {
-        track.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
-      } else {
-        track.scrollLeft += 2;
-      }
-    }, 12);
+    if (!rafId) {
+      lastTime = null; // Reset delta time
+      rafId = requestAnimationFrame(autoScroll);
+    }
   }
 
   function stopAutoScroll() {
-    clearInterval(autoScrollInterval);
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
   }
 
   // Engage auto-scrolling by default
@@ -762,7 +814,7 @@ function initFAQCarousel() {
     isDown = true;
     track.classList.add('active');
     startX = e.pageX - track.offsetLeft;
-    scrollLeft = track.scrollLeft;
+    scrollLeftState = track.scrollLeft;
     stopAutoScroll();
   });
   track.addEventListener('mouseleave', () => {
@@ -779,7 +831,8 @@ function initFAQCarousel() {
     e.preventDefault();
     const x = e.pageX - track.offsetLeft;
     const walk = (x - startX) * 2; // the multiplier creates 'fast' scroll tracking
-    track.scrollLeft = scrollLeft - walk;
+    track.scrollLeft = scrollLeftState - walk;
+    scrollPos = track.scrollLeft;
   });
 }
 
