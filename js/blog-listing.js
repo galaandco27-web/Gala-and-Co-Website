@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('blog-grid-main');
   const loadMoreBtn = document.getElementById('load-more-btn');
   const filterBtns = document.querySelectorAll('.blog-filter-btn');
-  
+
   if (!grid || !window.ContentfulAPI) return;
 
   let currentSkip = 0;
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="blog-card-content">
             <span class="blog-card-category">${post.category}</span>
             <h3 class="blog-card-title">${post.title}</h3>
-            <div class="blog-card-meta">${post.publishDate} &bull; ${post.readTime}</div>
+            <div class="blog-card-meta">${post.dateAndTime} &bull; ${post.readTime}</div>
             <p class="blog-card-excerpt">${post.excerpt}</p>
             <a href="/blog-post.html?slug=${post.slug}" class="blog-card-readmore" aria-label="Read more about ${post.title}">Read More &rarr;</a>
           </div>
@@ -77,15 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const { posts, total } = await window.ContentfulAPI.fetchBlogPosts(POSTS_PER_PAGE, currentSkip, currentCategory);
       removeSkeletons();
-      
+
       if (posts.length === 0 && reset) {
-         grid.innerHTML = '<div class="home-blog-error" style="grid-column: 1 / -1;">No articles found for this category.</div>';
+        grid.innerHTML = '<div class="home-blog-error" style="grid-column: 1 / -1;">No articles found for this category.</div>';
       } else {
         renderPosts(posts);
       }
 
       currentSkip += posts.length;
-      
+
       if (currentSkip >= total) {
         hasMore = false;
         loadMoreBtn.classList.add('hidden');
