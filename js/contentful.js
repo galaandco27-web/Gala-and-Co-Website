@@ -43,8 +43,8 @@ function formatPost(item, includes) {
 
   // Format date
   let formattedDate = '';
-  if (fields.publishDate) {
-    const dateObj = new Date(fields.publishDate);
+  if (fields.dateAndTime) {
+    const dateObj = new Date(fields.dateAndTime);
     formattedDate = dateObj.toLocaleDateString('en-US', {
       month: 'long',
       day: 'numeric',
@@ -60,9 +60,9 @@ function formatPost(item, includes) {
     excerpt: fields.excerpt || '',
     heroImage: heroImageUrl,
     heroImageAltText: fields.heroImageAltText || fields.title || '',
-    publishDate: formattedDate,
+    dateAndTime: formattedDate,
     readTime: fields.readTime || '5 min',
-    content: fields.content || null,
+    content: fields.body || null,
     metaTitle: fields.metaTitle || fields.title,
     metaDescription: fields.metaDescription || fields.excerpt
   };
@@ -75,7 +75,7 @@ async function fetchBlogPosts(limit = 6, skip = 0, category = null) {
   const params = {
     limit,
     skip,
-    order: '-fields.publishDate'
+    order: '-fields.dateAndTime'
   };
 
   if (category && category !== 'All') {
@@ -86,7 +86,7 @@ async function fetchBlogPosts(limit = 6, skip = 0, category = null) {
     const response = await fetch(buildUrl(params));
     if (!response.ok) throw new Error('Failed to fetch posts');
     const data = await response.json();
-    
+
     return {
       total: data.total,
       posts: data.items.map(item => formatPost(item, data.includes))
@@ -110,9 +110,9 @@ async function fetchBlogPostBySlug(slug) {
     const response = await fetch(buildUrl(params));
     if (!response.ok) throw new Error('Failed to fetch post');
     const data = await response.json();
-    
+
     if (data.items.length === 0) return null;
-    
+
     return formatPost(data.items[0], data.includes);
   } catch (error) {
     console.error('Error fetching blog post by slug:', error);
@@ -128,14 +128,14 @@ async function fetchRelatedPosts(category, excludeSlug, limit = 3) {
     'fields.category': category,
     'fields.slug[ne]': excludeSlug,
     limit,
-    order: '-fields.publishDate'
+    order: '-fields.dateAndTime'
   };
 
   try {
     const response = await fetch(buildUrl(params));
     if (!response.ok) throw new Error('Failed to fetch related posts');
     const data = await response.json();
-    
+
     return data.items.map(item => formatPost(item, data.includes));
   } catch (error) {
     console.error('Error fetching related posts:', error);
