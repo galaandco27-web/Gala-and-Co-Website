@@ -60,6 +60,7 @@ function formatPost(item, includes) {
     excerpt: fields.excerpt || '',
     heroImage: heroImageUrl,
     heroImageAltText: fields.heroImageAltText || fields.title || '',
+    rawDate: fields.dateAndTime || null,        // ADD THIS LINE
     dateAndTime: formattedDate,
     readTime: fields.readTime || '5 min',
     content: fields.body || null,
