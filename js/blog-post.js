@@ -77,9 +77,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('post-hero-image').alt = post.heroImageAltText;
 
     // Render Rich Text Body
-    if (post.content && window.contentfulRichTextHtmlRenderer) {
-      const htmlContent = window.contentfulRichTextHtmlRenderer.documentToHtmlString(post.content);
-      document.getElementById('post-body-content').innerHTML = htmlContent;
+    if (post.content) {
+      document.getElementById('post-body-content').innerHTML = renderRichText(post.content);
     } else {
       document.getElementById('post-body-content').innerHTML = '<p>Content unavailable.</p>';
     }
@@ -130,4 +129,61 @@ async function loadRelatedPosts(category, currentSlug) {
   } catch (error) {
     console.error('Error rendering related posts', error);
   }
+}
+
+function renderRichText(document) {
+  if (!document || !document.content) return '';
+  return document.content.map(node => renderNode(node)).join('');
+}
+
+function renderNode(node) {
+  if (!node) return '';
+  switch (node.nodeType) {
+    case 'paragraph':
+      return `<p>${renderChildren(node)}</p>`;
+    case 'heading-1':
+      return `<h1>${renderChildren(node)}</h1>`;
+    case 'heading-2':
+      return `<h2>${renderChildren(node)}</h2>`;
+    case 'heading-3':
+      return `<h3>${renderChildren(node)}</h3>`;
+    case 'heading-4':
+      return `<h4>${renderChildren(node)}</h4>`;
+    case 'unordered-list':
+      return `<ul>${renderChildren(node)}</ul>`;
+    case 'ordered-list':
+      return `<ol>${renderChildren(node)}</ol>`;
+    case 'list-item':
+      return `<li>${renderChildren(node)}</li>`;
+    case 'blockquote':
+      return `<blockquote>${renderChildren(node)}</blockquote>`;
+    case 'hr':
+      return `<hr>`;
+    case 'embedded-asset-block': {
+      const url = node.data?.target?.fields?.file?.url;
+      const alt = node.data?.target?.fields?.title || '';
+      return url ? `<img src="https:${url}" alt="${alt}" style="max-width:100%;margin:32px 0;">` : '';
+    }
+    case 'hyperlink':
+      return `<a href="${node.data?.uri || '#'}" target="_blank" rel="noopener">${renderChildren(node)}</a>`;
+    case 'text': {
+      let text = node.value || '';
+      if (node.marks) {
+        node.marks.forEach(mark => {
+          if (mark.type === 'bold') text = `<strong>${text}</strong>`;
+          if (mark.type === 'italic') text = `<em>${text}</em>`;
+          if (mark.type === 'underline') text = `<u>${text}</u>`;
+          if (mark.type === 'code') text = `<code>${text}</code>`;
+        });
+      }
+      return text;
+    }
+    default:
+      return renderChildren(node);
+  }
+}
+
+function renderChildren(node) {
+  if (!node.content) return '';
+  return node.content.map(child => renderNode(child)).join('');
 }
