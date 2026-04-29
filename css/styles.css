@@ -2962,10 +2962,15 @@ body.modal-open {
   flex-direction: column;
   gap: 1.25rem;
   white-space: normal;
+  /* Hardware acceleration & anti-flicker */
+  will-change: transform, box-shadow, border-color;
+  transform: translateY(0) translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .faq-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) translateZ(0);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
   border-color: var(--color-primary);
 }
