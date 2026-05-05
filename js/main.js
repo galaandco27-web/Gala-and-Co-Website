@@ -896,3 +896,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticCTA();
   initFAQCarousel();
 });
+
+// ======================================================
+// WHATSAPP TOOLTIP LOGIC
+// ======================================================
+document.addEventListener('DOMContentLoaded', () => {
+  const waTooltip = document.querySelector('.whatsapp-tooltip');
+  if (waTooltip) {
+    // Show tooltip after 2 seconds
+    setTimeout(() => {
+      waTooltip.classList.add('show-tooltip');
+      // Hide tooltip after 5 seconds of being shown (total 7 seconds)
+      setTimeout(() => {
+        waTooltip.classList.remove('show-tooltip');
+      }, 5000);
+    }, 2000);
+  }
+});
