@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Blog Post | Gala &amp; Co</title>
+  <!-- SEO tags injected by JS -->
+  <meta name="description" content="" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+
+</head>
+
+<body class="blog-page">
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo header-logo visible" aria-label="Gala &amp; Co — Home">
+        <img src="assets/images/logo.png" alt="Gala &amp; Co Logo" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary navigation">
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-request-visit open-visit-modal" style="display: flex;" aria-label="Open request a visit form">Request a Visit</button>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="/about.html">About</a>
+    <a href="/services.html">Services</a>
+    <a href="/#projects">Projects</a>
+    <a href="/#contact">Contact</a>
+    <button class="btn-mobile-cta open-visit-modal" aria-label="Open request a visit form">Request a Visit</button>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Skeleton Loader (shows immediately) -->
+    <div id="post-skeleton-loader" style="padding-top: 8rem; max-width: 760px; margin-inline: auto; padding-inline: 24px;">
+      <div class="skeleton skeleton-meta" style="width: 30%; height: 16px;"></div>
+      <div class="skeleton skeleton-title" style="width: 80%; height: 48px; margin-top: 2rem;"></div>
+      <div class="skeleton skeleton-title" style="width: 50%; height: 48px; margin-bottom: 2rem;"></div>
+      <div class="skeleton skeleton-img" style="height: 400px; margin-bottom: 3rem;"></div>
+      <div class="skeleton skeleton-text"></div>
+      <div class="skeleton skeleton-text"></div>
+      <div class="skeleton skeleton-text"></div>
+      <div class="skeleton skeleton-text short"></div>
+    </div>
+
+    <!-- POST CONTENT (hidden until loaded) -->
+    <div id="post-content-container" class="hidden">
+      <!-- Header -->
+      <section class="post-header-section">
+        <div class="post-breadcrumb">
+          <a href="/">Home</a> &rarr; <a href="/blog.html">Blog</a> &rarr; <span id="breadcrumb-title">Loading...</span>
+        </div>
+        <span class="post-category" id="post-category-label">Category</span>
+        <h1 class="post-title" id="post-title-heading">Loading...</h1>
+        <div class="post-meta" id="post-date-read">Date &bull; Read Time</div>
+      </section>
+
+      <!-- Hero Image -->
+      <div class="post-hero-img-wrap">
+        <img id="post-hero-image" src="" alt="Blog Hero Image" class="post-hero-img" />
+      </div>
+
+      <!-- Rich Text Body -->
+      <article class="post-body" id="post-body-content">
+        <!-- JS injects rich text HTML here -->
+      </article>
+
+      <!-- Back Link -->
+      <div class="post-footer">
+        <a href="/blog.html" class="post-back-link">&larr; Back to All Articles</a>
+      </div>
+    </div>
+
+    <!-- RELATED POSTS -->
+    <section class="related-posts-section hidden" id="related-posts-section-wrapper">
+      <div class="related-posts-container">
+        <h2 class="related-posts-heading">More Articles</h2>
+        <div class="blog-grid-dynamic" id="related-posts-grid">
+          <!-- JS injects related posts here -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <img src="assets/images/White_Logo.png" alt="Gala &amp; Co Logo" class="brand-logo-img footer-logo-img">
+          <p class="footer-tagline">The Future rises with Gala.</p>
+        </div>
+
+        <div class="footer-col-nav">
+          <nav aria-label="Footer navigation">
+            <a href="/about.html">About</a>
+            <a href="/services.html">Services</a>
+            <a href="/#projects">Projects</a>
+            <a href="/privacy-policy.html">Privacy Policy</a>
+          </nav>
+        </div>
+
+        <div class="footer-col-social">
+          <nav aria-label="Social media">
+            <a href="https://www.instagram.com/galaandco_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/in/maitri-k-gala-818368270/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.facebook.com/people/Maitri-Gala/pfbid032Fag9Bw9cJ5nBzQH3PmGudGNUkjH5dsN3UxyiwtXo1rvR3pL4UCdbM5anXoiC4xDl/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </nav>
+        </div>
+
+        <div class="footer-col-contact">
+          <address>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Phone</span>
+              <p class="footer-contact-value"><a href="tel:+919503696035">+91 95036 96035</a></p>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Email</span>
+              <p class="footer-contact-value"><a href="mailto:info@galaandco.com">info@galaandco.com</a></p>
+            </div>
+          </address>
+        </div>
+
+        <div class="footer-col-address">
+          <address>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Address</span>
+              <p class="footer-contact-value">NM Service Station, Opp GPO,<br />Sadhu Vaswani Chowk, Pune 411001</p>
+            </div>
+          </address>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/contentful.js"></script>
+  <script src="js/blog-post.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

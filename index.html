@@ -33,6 +33,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/blog.css" />
 
   <!-- JSON-LD: LocalBusiness -->
   <script type="application/ld+json">
@@ -345,7 +346,7 @@
           <p class="blog-sub">Discover featured insights and resources about affordable housing</p>
         </div>
 
-        <div class="blog-grid">
+        <div class="blog-grid" id="home-blog-grid">
           <!-- Card 1 -->
           <article class="blog-card reveal delay-2">
             <div class="blog-image-wrap">
@@ -396,7 +397,7 @@
         </div>
 
         <div class="blog-footer reveal delay-5">
-          <a href="#" class="about-cta">View All Articles &rarr;</a>
+          <a href="/blog.html" class="about-cta">View All Articles &rarr;</a>
         </div>
       </div>
     </section>
@@ -647,6 +648,8 @@
     </div>
   </div>
 
+  <script src="js/contentful.js" defer></script>
+  <script src="js/home-blog.js" defer></script>
   <script src="js/main.js" defer></script>
   
   <a href="javascript:void(0)" class="desktop-sticky-cta open-visit-modal" aria-label="Request a Call Back">REQUEST A CALL BACK</a>
