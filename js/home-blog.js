@@ -18,15 +18,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const cardHtml = `
           <article class="blog-card reveal ${delayClass} is-visible">
-            <div class="blog-image-wrap" style="cursor: pointer;" onclick="window.location.href='/blog-post.html?slug=${post.slug}'">
+            <div class="blog-image-wrap" style="cursor: pointer;" onclick="window.location.href='/blog/${post.slug}'">
               <img src="${post.heroImage}" alt="${post.heroImageAltText}" loading="lazy">
             </div>
             <div class="blog-content">
               <span class="blog-category">${post.category}</span>
-              <h3 class="blog-title" style="cursor: pointer;" onclick="window.location.href='/blog-post.html?slug=${post.slug}'">${post.title}</h3>
+              <h3 class="blog-title" style="cursor: pointer;" onclick="window.location.href='/blog/${post.slug}'">${post.title}</h3>
               <div class="blog-meta">${post.dateAndTime} &bull; ${post.readTime}</div>
               <p class="blog-excerpt">${post.excerpt}</p>
-              <a href="/blog-post.html?slug=${post.slug}" class="blog-readmore" aria-label="Read more about ${post.title}">Read More &rarr;</a>
+              <a href="/blog/${post.slug}" class="blog-readmore" aria-label="Read more about ${post.title}">Read More &rarr;</a>
             </div>
           </article>
         `;
