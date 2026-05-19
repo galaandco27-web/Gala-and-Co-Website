@@ -40,7 +40,7 @@
     },
     {
       "source": "/blog/:slug",
-      "destination": "/blog-post.html?slug=:slug"
+      "destination": "/blog-post?slug=:slug"
     }
   ]
 }
