@@ -31,6 +31,18 @@
       "source": "/privacy-policy.html",
       "destination": "/privacy-policy",
       "permanent": true
+    },
+    {
+      "source": "/blog-post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "(?<postslug>.*)"
+        }
+      ],
+      "destination": "/blog/:postslug",
+      "permanent": true
     }
   ],
   "rewrites": [
