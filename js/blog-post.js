@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   if (!slug) {
-    document.getElementById('post-content-container').innerHTML = '<h2 style="text-align:center; padding: 10rem 0;">Post not found</h2><div style="text-align:center;"><a href="/blog.html" class="post-back-link">← Back to All Articles</a></div>';
+    document.getElementById('post-content-container').innerHTML = '<h2 style="text-align:center; padding: 10rem 0;">Post not found</h2><div style="text-align:center;"><a href="/blog" class="post-back-link">← Back to All Articles</a></div>';
     document.getElementById('post-skeleton-loader').classList.add('hidden');
     document.getElementById('post-content-container').classList.remove('hidden');
     return;
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const post = await window.ContentfulAPI.fetchBlogPostBySlug(slug);
 
     if (!post) {
-      document.getElementById('post-content-container').innerHTML = '<h2 style="text-align:center; padding: 10rem 0;">Post not found</h2><div style="text-align:center;"><a href="/blog.html" class="post-back-link">← Back to All Articles</a></div>';
+      document.getElementById('post-content-container').innerHTML = '<h2 style="text-align:center; padding: 10rem 0;">Post not found</h2><div style="text-align:center;"><a href="/blog" class="post-back-link">← Back to All Articles</a></div>';
       document.getElementById('post-skeleton-loader').classList.add('hidden');
       document.getElementById('post-content-container').classList.remove('hidden');
       return;
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   } catch (error) {
     console.error(error);
-    document.getElementById('post-content-container').innerHTML = '<h2 style="text-align:center; padding: 10rem 0;">Error loading post.</h2><div style="text-align:center;"><a href="/blog.html" class="post-back-link">← Back to All Articles</a></div>';
+    document.getElementById('post-content-container').innerHTML = '<h2 style="text-align:center; padding: 10rem 0;">Error loading post.</h2><div style="text-align:center;"><a href="/blog" class="post-back-link">← Back to All Articles</a></div>';
     document.getElementById('post-skeleton-loader').classList.add('hidden');
     document.getElementById('post-content-container').classList.remove('hidden');
   }

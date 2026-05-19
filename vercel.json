@@ -33,6 +33,11 @@
       "permanent": true
     },
     {
+      "source": "/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
       "source": "/blog-post.html",
       "has": [
         {
