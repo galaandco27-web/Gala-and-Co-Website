@@ -21,7 +21,7 @@
   <meta property="og:url" content="https://galaandco.com/about" />
   <meta property="og:image" content="https://galaandco.com/assets/images/hero-building.jpg" />
 
-  <link rel="preload" as="image" href="assets/images/about-facade.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/images/about-facade.png" fetchpriority="high" />
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
 
   <style>
     /* Specific styles for About page */
@@ -281,12 +281,12 @@
     <div class="header-inner">
       <a href="/" class="logo header-logo visible" aria-label="Gala &amp; Co — Home" style="opacity: 1;">
         <!-- Using custom class to prevent main.js from swapping the logo to white -->
-        <img src="assets/images/logo.png" alt="Gala &amp; Co Logo" class="brand-logo-subpage">
+        <img src="/assets/images/logo.png" alt="Gala &amp; Co Logo" class="brand-logo-subpage">
       </a>
 
       <nav class="nav-desktop" aria-label="Primary navigation">
-        <a href="/about.html" class="active">About</a>
-        <a href="/services.html">Services</a>
+        <a href="/about" class="active">About</a>
+        <a href="/services">Services</a>
         <a href="javascript:void(0)" class="open-projects-modal">Projects</a>
         <a href="/#contact">Contact</a>
       </nav>
@@ -303,8 +303,8 @@
   </header>
 
   <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
-    <a href="/about.html" class="active">About</a>
-    <a href="/services.html">Services</a>
+    <a href="/about" class="active">About</a>
+    <a href="/services">Services</a>
     <a href="javascript:void(0)" class="open-projects-modal">Projects</a>
     <a href="/#contact">Contact</a>
     <button class="btn-mobile-cta open-visit-modal" aria-label="Open request a visit form">Request a Visit</button>
@@ -385,7 +385,7 @@
             </div>
           </div>
           <div class="about-image-wrap reveal-right">
-            <img src="assets/images/about-facade.png" alt="Gala &amp; Co Luxury Residential Facade" width="800" height="1067" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08);" />
+            <img src="/assets/images/about-facade.png" alt="Gala &amp; Co Luxury Residential Facade" width="800" height="1067" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08);" />
           </div>
         </div>
       </div>
@@ -393,7 +393,7 @@
 
     <!-- SECTION 2: VISUAL BREAK / TRUST ELEMENT -->
     <section class="visual-break-section">
-      <img src="assets/images/project-construction.jpg" alt="Construction detail" class="visual-break-img" />
+      <img src="/assets/images/project-construction.jpg" alt="Construction detail" class="visual-break-img" />
       <div class="visual-break-overlay"></div>
       <h2 class="visual-break-text reveal">
         Structured Precise<br /><span style="color: var(--color-primary);">Value-Driven</span>
@@ -406,7 +406,7 @@
         <div class="about-page-grid founder-row">
           <div class="founder-image-col reveal-left"
             style="max-width: 360px; margin-inline: auto; text-align: center; width: 100%;">
-            <img src="assets/images/maitri.png" alt="Maitri K. Gala" class="founder-img" />
+            <img src="/assets/images/maitri.png" alt="Maitri K. Gala" class="founder-img" />
             <a href="https://www.linkedin.com/in/maitri-k-gala-818368270/" target="_blank" rel="noopener noreferrer"
               class="founder-cta" aria-label="Connect with Maitri K. Gala on LinkedIn" style="justify-content: center;">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -478,15 +478,16 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col-brand">
-          <img src="assets/images/White_Logo.png" alt="Gala &amp; Co Logo" class="brand-logo-img footer-logo-img">
+          <img src="/assets/images/White_Logo.png" alt="Gala &amp; Co Logo" class="brand-logo-img footer-logo-img">
           <p class="footer-tagline">The Future rises with Gala.</p>
         </div>
 
         <div class="footer-col-nav">
           <nav aria-label="Footer navigation">
-            <a href="/about.html">About</a>
-            <a href="/services.html">Services</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
             <a href="javascript:void(0)" class="open-projects-modal">Projects</a>
+            <a href="/blog">Blog</a>
             <a href="/privacy-policy">Privacy Policy</a>
           </nav>
         </div>
@@ -542,14 +543,14 @@
         <div class="projects-grid">
           <article class="project-box" role="region" aria-label="Project 1 Image Slider">
             <div class="project-slider" id="project-slider-modal">
-              <img src="assets/images/project 1 a.jpg" alt="Signature Project Architectural Detail" class="slider-img is-active" />
-              <img src="assets/images/project 1 b.jpg" alt="Signature Project Interior Design" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 c.jpg" alt="Signature Project Facade" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 d.jpg" alt="Signature Project Premium Living" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 e.jpg" alt="Signature Project Luxury Space" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 f.jpg" alt="Signature Project Urban Context" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 g.jpg" alt="Signature Project Sunset View" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 h.jpg" alt="Signature Project Evening Perspective" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 a.jpg" alt="Signature Project Architectural Detail" class="slider-img is-active" />
+              <img src="/assets/images/project 1 b.jpg" alt="Signature Project Interior Design" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 c.jpg" alt="Signature Project Facade" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 d.jpg" alt="Signature Project Premium Living" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 e.jpg" alt="Signature Project Luxury Space" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 f.jpg" alt="Signature Project Urban Context" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 g.jpg" alt="Signature Project Sunset View" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 h.jpg" alt="Signature Project Evening Perspective" class="slider-img" loading="lazy" />
               <div class="slider-controls">
                 <button class="slider-btn prev-btn" aria-label="Previous image">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
@@ -561,7 +562,7 @@
             </div>
           </article>
           <article class="project-box" role="region" aria-label="Project 2 Overview">
-            <img src="assets/images/Project 2.jpeg" alt="Signature Project Master Development" class="project-box-img" loading="lazy" />
+            <img src="/assets/images/Project 2.jpeg" alt="Signature Project Master Development" class="project-box-img" loading="lazy" />
           </article>
         </div>
       </section>
@@ -629,7 +630,7 @@
     </div>
   </div>
 
-  <script src="js/main.js" defer></script>
+  <script src="/js/main.js" defer></script>
 
   <a href="javascript:void(0)" class="desktop-sticky-cta open-visit-modal" aria-label="Request a Call Back">REQUEST A
     CALL BACK</a>

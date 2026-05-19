@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let html = '';
     posts.forEach(post => {
       html += `
-        <article class="blog-card-dynamic" onclick="window.location.href='/blog-post.html?slug=${post.slug}'">
+        <article class="blog-card-dynamic" onclick="window.location.href='/blog/${post.slug}'">
           <div class="blog-card-image-wrap">
             <img src="${post.heroImage}" alt="${post.heroImageAltText}" loading="lazy">
           </div>
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h3 class="blog-card-title">${post.title}</h3>
             <div class="blog-card-meta">${post.dateAndTime} &bull; ${post.readTime}</div>
             <p class="blog-card-excerpt">${post.excerpt}</p>
-            <a href="/blog-post.html?slug=${post.slug}" class="blog-card-readmore" aria-label="Read more about ${post.title}">Read More &rarr;</a>
+            <a href="/blog/${post.slug}" class="blog-card-readmore" aria-label="Read more about ${post.title}">Read More &rarr;</a>
           </div>
         </article>
       `;

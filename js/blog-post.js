@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const slug = urlParams.get('slug');
+  let slug = urlParams.get('slug');
+
+  if (!slug) {
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    if (pathParts[0] === 'blog' && pathParts[1]) {
+      slug = pathParts[1];
+    }
+  }
 
   if (!slug) {
     document.getElementById('post-content-container').innerHTML = '<h2 style="text-align:center; padding: 10rem 0;">Post not found</h2><div style="text-align:center;"><a href="/blog.html" class="post-back-link">← Back to All Articles</a></div>';
@@ -40,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = `https://galaandco.com/blog-post.html?slug=${post.slug}`;
+    canonical.href = `https://galaandco.com/blog/${post.slug}`;
 
     // Inject JSON-LD Schema
     const schemaScript = document.createElement('script');
@@ -109,7 +116,7 @@ async function loadRelatedPosts(category, currentSlug) {
       let html = '';
       related.forEach(post => {
         html += `
-          <article class="blog-card-dynamic" onclick="window.location.href='/blog-post.html?slug=${post.slug}'">
+          <article class="blog-card-dynamic" onclick="window.location.href='/blog/${post.slug}'">
             <div class="blog-card-image-wrap">
               <img src="${post.heroImage}" alt="${post.heroImageAltText}" loading="lazy">
             </div>
@@ -118,7 +125,7 @@ async function loadRelatedPosts(category, currentSlug) {
               <h3 class="blog-card-title">${post.title}</h3>
               <div class="blog-card-meta">${post.publishDate} &bull; ${post.readTime}</div>
               <p class="blog-card-excerpt">${post.excerpt}</p>
-              <a href="/blog-post.html?slug=${post.slug}" class="blog-card-readmore" aria-label="Read more about ${post.title}">Read More &rarr;</a>
+              <a href="/blog/${post.slug}" class="blog-card-readmore" aria-label="Read more about ${post.title}">Read More &rarr;</a>
             </div>
           </article>
         `;

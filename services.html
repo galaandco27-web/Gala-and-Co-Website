@@ -21,7 +21,7 @@
   <meta property="og:url" content="https://galaandco.com/services" />
   <meta property="og:image" content="https://galaandco.com/assets/images/hero-building.jpg" />
 
-  <link rel="preload" as="image" href="assets/images/project 1 a.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/images/project 1 a.jpg" fetchpriority="high" />
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
 
   <style>
         /* Specific styles for Services page */
@@ -299,12 +299,12 @@
     <div class="header-inner">
       <a href="/" class="logo header-logo visible" aria-label="Gala &amp; Co — Home" style="opacity: 1;">
         <!-- Using custom class to prevent main.js from swapping the logo to white -->
-        <img src="assets/images/logo.png" alt="Gala &amp; Co Logo" class="brand-logo-subpage">
+        <img src="/assets/images/logo.png" alt="Gala &amp; Co Logo" class="brand-logo-subpage">
       </a>
 
       <nav class="nav-desktop" aria-label="Primary navigation">
-        <a href="/about.html">About</a>
-        <a href="/services.html" class="active">Services</a>
+        <a href="/about">About</a>
+        <a href="/services" class="active">Services</a>
         <a href="javascript:void(0)" class="open-projects-modal">Projects</a>
         <a href="/#contact">Contact</a>
       </nav>
@@ -321,8 +321,8 @@
   </header>
 
   <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
-    <a href="/about.html">About</a>
-    <a href="/services.html" class="active">Services</a>
+    <a href="/about">About</a>
+    <a href="/services" class="active">Services</a>
     <a href="javascript:void(0)" class="open-projects-modal">Projects</a>
     <a href="/#contact">Contact</a>
     <button class="btn-mobile-cta open-visit-modal" aria-label="Open request a visit form">Request a Visit</button>
@@ -350,7 +350,7 @@
           
           <div class="services-grid-layout">
             <div class="services-grid-image reveal-left delay-1">
-              <img src="assets/images/services-realestate.png" alt="Real Estate Services" />
+              <img src="/assets/images/services-realestate.png" alt="Real Estate Services" />
             </div>
             
             <div class="services-grid-content">
@@ -393,7 +393,7 @@
           
           <div class="services-grid-layout reverse">
             <div class="services-grid-image reveal-right delay-1">
-              <img src="assets/images/services-contracting.png" alt="Contracting Services &amp; RCC Works" />
+              <img src="/assets/images/services-contracting.png" alt="Contracting Services &amp; RCC Works" />
             </div>
 
             <div class="services-grid-content">
@@ -523,15 +523,16 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col-brand">
-          <img src="assets/images/White_Logo.png" alt="Gala &amp; Co Logo" class="brand-logo-img footer-logo-img">
+          <img src="/assets/images/White_Logo.png" alt="Gala &amp; Co Logo" class="brand-logo-img footer-logo-img">
           <p class="footer-tagline">The Future rises with Gala.</p>
         </div>
 
         <div class="footer-col-nav">
           <nav aria-label="Footer navigation">
-            <a href="/about.html">About</a>
-            <a href="/services.html">Services</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
             <a href="javascript:void(0)" class="open-projects-modal">Projects</a>
+            <a href="/blog">Blog</a>
             <a href="/privacy-policy">Privacy Policy</a>
           </nav>
         </div>
@@ -587,14 +588,14 @@
         <div class="projects-grid">
           <article class="project-box" role="region" aria-label="Project 1 Image Slider">
             <div class="project-slider" id="project-slider-modal">
-              <img src="assets/images/project 1 a.jpg" alt="Signature Project Architectural Detail" class="slider-img is-active" />
-              <img src="assets/images/project 1 b.jpg" alt="Signature Project Interior Design" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 c.jpg" alt="Signature Project Facade" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 d.jpg" alt="Signature Project Premium Living" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 e.jpg" alt="Signature Project Luxury Space" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 f.jpg" alt="Signature Project Urban Context" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 g.jpg" alt="Signature Project Sunset View" class="slider-img" loading="lazy" />
-              <img src="assets/images/project 1 h.jpg" alt="Signature Project Evening Perspective" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 a.jpg" alt="Signature Project Architectural Detail" class="slider-img is-active" />
+              <img src="/assets/images/project 1 b.jpg" alt="Signature Project Interior Design" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 c.jpg" alt="Signature Project Facade" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 d.jpg" alt="Signature Project Premium Living" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 e.jpg" alt="Signature Project Luxury Space" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 f.jpg" alt="Signature Project Urban Context" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 g.jpg" alt="Signature Project Sunset View" class="slider-img" loading="lazy" />
+              <img src="/assets/images/project 1 h.jpg" alt="Signature Project Evening Perspective" class="slider-img" loading="lazy" />
               <div class="slider-controls">
                 <button class="slider-btn prev-btn" aria-label="Previous image">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
@@ -606,7 +607,7 @@
             </div>
           </article>
           <article class="project-box" role="region" aria-label="Project 2 Overview">
-            <img src="assets/images/Project 2.jpeg" alt="Signature Project Master Development" class="project-box-img" loading="lazy" />
+            <img src="/assets/images/Project 2.jpeg" alt="Signature Project Master Development" class="project-box-img" loading="lazy" />
           </article>
         </div>
       </section>
@@ -674,7 +675,7 @@
     </div>
   </div>
 
-  <script src="js/main.js" defer></script>
+  <script src="/js/main.js" defer></script>
 
   <a href="javascript:void(0)" class="desktop-sticky-cta open-visit-modal" aria-label="Request a Call Back">REQUEST A CALL BACK</a>
   <a href="javascript:void(0)" class="mobile-sticky-cta open-visit-modal" aria-label="Request a Call Back">Request a
