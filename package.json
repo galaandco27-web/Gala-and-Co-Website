@@ -1,0 +1,11 @@
+{
+  "name": "gala-and-co-website",
+  "version": "1.0.0",
+  "description": "Gala & Co — Luxury Real Estate Advisory & Contracting Static Site",
+  "scripts": {
+    "build": "node scripts/build-blog.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}

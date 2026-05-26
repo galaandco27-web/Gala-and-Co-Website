@@ -118,5 +118,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initial Load
-  loadPosts(true);
+  const preRenderedCards = grid.querySelectorAll('.blog-card-dynamic:not(.skeleton-card)');
+  if (preRenderedCards.length > 0) {
+    currentSkip = preRenderedCards.length;
+    const totalPosts = parseInt(grid.getAttribute('data-total-posts') || '0', 10);
+    if (currentSkip >= totalPosts) {
+      hasMore = false;
+      loadMoreBtn.classList.add('hidden');
+    } else {
+      hasMore = true;
+      loadMoreBtn.classList.remove('hidden');
+    }
+  } else {
+    loadPosts(true);
+  }
 });

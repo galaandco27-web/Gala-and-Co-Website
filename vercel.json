@@ -1,4 +1,5 @@
 {
+  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
@@ -54,10 +55,6 @@
     {
       "source": "/sitemap.xml",
       "destination": "/api/sitemap"
-    },
-    {
-      "source": "/blog/:slug",
-      "destination": "/blog-post?slug=:slug"
     }
   ]
 }

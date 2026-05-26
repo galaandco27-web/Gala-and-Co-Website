@@ -86,60 +86,8 @@
 
     <!-- BLOG LISTING -->
     <section class="blog-listing-container">
-      <div class="blog-grid-dynamic" id="blog-grid-main" data-total-posts="4">
-        
-        <article class="blog-card-dynamic" onclick="window.location.href='/blog/legal-documents-to-review-before-purchasing-property'">
-          <div class="blog-card-image-wrap">
-            <img src="https://images.ctfassets.net/hvql6r6zxbiq/zOLtvT8NG2EZTG4p21BcZ/e6fc04119475c121adbf26e16177aadc/property_legal_documents_checklist.jpg?w=1200&fm=webp&q=80" alt="property legal documents checklist" loading="lazy">
-          </div>
-          <div class="blog-card-content">
-            <span class="blog-card-category">Advisory</span>
-            <h3 class="blog-card-title">Legal Documents To Review Before Purchasing Property</h3>
-            <div class="blog-card-meta">May 26, 2026 &bull; 3 min read</div>
-            <p class="blog-card-excerpt">Discover the essential legal documents to review before purchasing property in India, from title deeds to RERA registration, for a safe investment.</p>
-            <a href="/blog/legal-documents-to-review-before-purchasing-property" class="blog-card-readmore" aria-label="Read more about Legal Documents To Review Before Purchasing Property">Read More &rarr;</a>
-          </div>
-        </article>
-      
-        <article class="blog-card-dynamic" onclick="window.location.href='/blog/top-benefits-of-investing-in-luxury-homes-in-pune'">
-          <div class="blog-card-image-wrap">
-            <img src="https://images.ctfassets.net/hvql6r6zxbiq/6kEHcHCRSCJdUXwXCsOO8d/3eb9338217cea1746fb49d4479b415ee/luxury_homes_in_Pune.jpg?w=1200&fm=webp&q=80" alt="luxury homes in Pune" loading="lazy">
-          </div>
-          <div class="blog-card-content">
-            <span class="blog-card-category">Market Insights</span>
-            <h3 class="blog-card-title">Top Benefits of Investing in Luxury Homes in Pune</h3>
-            <div class="blog-card-meta">May 22, 2026 &bull; 3 min read</div>
-            <p class="blog-card-excerpt">Discover why luxury homes in Pune are a smart investment with high returns, premium living, and strong future growth potential.</p>
-            <a href="/blog/top-benefits-of-investing-in-luxury-homes-in-pune" class="blog-card-readmore" aria-label="Read more about Top Benefits of Investing in Luxury Homes in Pune">Read More &rarr;</a>
-          </div>
-        </article>
-      
-        <article class="blog-card-dynamic" onclick="window.location.href='/blog/real-estate-advisory-services'">
-          <div class="blog-card-image-wrap">
-            <img src="https://images.ctfassets.net/hvql6r6zxbiq/7kVHNmO5ULMVsgiJjiBTjp/7c37ae7c27e491c0261c73f02c36ba0e/real_estate_advisory_services.jpg?w=1200&fm=webp&q=80" alt="real estate advisory services" loading="lazy">
-          </div>
-          <div class="blog-card-content">
-            <span class="blog-card-category">Advisory</span>
-            <h3 class="blog-card-title">Why Professional Property Advisory Matters in Today’s Real Estate Market</h3>
-            <div class="blog-card-meta">May 19, 2026 &bull; 3 min read</div>
-            <p class="blog-card-excerpt">Expert real estate advisory services help buyers and investors make smarter property decisions with market, legal, and investment guidance.</p>
-            <a href="/blog/real-estate-advisory-services" class="blog-card-readmore" aria-label="Read more about Why Professional Property Advisory Matters in Today’s Real Estate Market">Read More &rarr;</a>
-          </div>
-        </article>
-      
-        <article class="blog-card-dynamic" onclick="window.location.href='/blog/pune-real-estate-market-what-to-expect-in-2026'">
-          <div class="blog-card-image-wrap">
-            <img src="https://images.ctfassets.net/hvql6r6zxbiq/4nw68tlNnyPSw0bjJhphhv/26f38cb110e3a0cdcf3758796b703059/lifestyle-interior.jpg?w=1200&fm=webp&q=80" alt="Pune skyline and premium residential developments in 2026" loading="lazy">
-          </div>
-          <div class="blog-card-content">
-            <span class="blog-card-category">Market Insights</span>
-            <h3 class="blog-card-title">Pune Real Estate Market: What to Expect in 2026</h3>
-            <div class="blog-card-meta">April 30, 2026 &bull; 3 min read</div>
-            <p class="blog-card-excerpt">A focused look at price trends, emerging micro-markets, and buyer sentiment shaping Pune's premium residential segment this year.</p>
-            <a href="/blog/pune-real-estate-market-what-to-expect-in-2026" class="blog-card-readmore" aria-label="Read more about Pune Real Estate Market: What to Expect in 2026">Read More &rarr;</a>
-          </div>
-        </article>
-      
+      <div class="blog-grid-dynamic" id="blog-grid-main" data-total-posts="{{TOTAL_POSTS}}">
+        {{BLOG_CARDS_HTML}}
       </div>
       
       <div class="blog-load-more-wrap">
