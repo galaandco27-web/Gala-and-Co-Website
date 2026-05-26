@@ -59,8 +59,12 @@ function formatPost(item, includes) {
   }
 
   // Contentful Image Optimization: w=1200, fm=webp, q=80
+  let ogImageUrl = heroImageUrl;
   if (heroImageUrl && !heroImageUrl.includes('assets/images/')) {
+    ogImageUrl = heroImageUrl + (heroImageUrl.includes('?') ? '&w=1200&h=630&fit=fill&fm=jpg&q=80' : '?w=1200&h=630&fit=fill&fm=jpg&q=80');
     heroImageUrl += heroImageUrl.includes('?') ? '&w=1200&fm=webp&q=80' : '?w=1200&fm=webp&q=80';
+  } else if (heroImageUrl.startsWith('/')) {
+    ogImageUrl = 'https://galaandco.com' + heroImageUrl;
   }
 
   return {
@@ -70,6 +74,7 @@ function formatPost(item, includes) {
     category: fields.category || 'Uncategorized',
     excerpt: fields.excerpt || '',
     heroImage: heroImageUrl,
+    ogImage: ogImageUrl,
     heroImageAltText: fields.heroImageAltText || fields.title || '',
     rawDate: fields.dateAndTime || null,
     dateAndTime: formattedDate,
@@ -218,6 +223,7 @@ async function main() {
         .replace(/{{DATE}}/g, post.dateAndTime)
         .replace(/{{READ_TIME}}/g, post.readTime)
         .replace(/{{HERO_IMAGE}}/g, post.heroImage)
+        .replace(/{{OG_IMAGE}}/g, post.ogImage)
         .replace(/{{HERO_IMAGE_ALT}}/g, post.heroImageAltText)
         .replace(/{{BODY_CONTENT}}/g, bodyContent)
         .replace(/{{SCHEMA_DATA}}/g, JSON.stringify(schema, null, 2));
