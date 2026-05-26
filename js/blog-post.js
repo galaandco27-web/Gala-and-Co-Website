@@ -80,7 +80,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('post-category-label').textContent = post.category;
     document.getElementById('post-title-heading').textContent = post.title;
     document.getElementById('post-date-read').innerHTML = `${post.dateAndTime} &bull; ${post.readTime}`;
-    document.getElementById('post-hero-image').src = post.heroImage;
+    let heroImgUrl = post.heroImage;
+    if (heroImgUrl && !heroImgUrl.includes('assets/images/')) {
+      heroImgUrl += heroImgUrl.includes('?') ? '&w=1200&fm=webp&q=80' : '?w=1200&fm=webp&q=80';
+    }
+    document.getElementById('post-hero-image').src = heroImgUrl;
     document.getElementById('post-hero-image').alt = post.heroImageAltText;
 
     // Render Rich Text Body
